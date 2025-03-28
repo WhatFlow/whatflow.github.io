@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'Privacy Policy - WhatFlow',
-  description: 'WhatFlow privacy policy and data protection information',
+  description: 'WhatFlow privacy policy and data protection information for our complete WhatsApp automation suite',
 };
 
 export default function PrivacyPolicy() {
@@ -17,26 +17,26 @@ export default function PrivacyPolicy() {
             <h1 className="text-4xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
             
             <p className="text-lg text-gray-600 mb-8">
-              At WhatFlow, your privacy and security are our top priorities. This Privacy Policy explains how we collect, use, and protect your data when you use our app.
+              At WhatFlow, your privacy and security are our top priorities. This Privacy Policy explains how we collect, use, and protect your data when you use our full-stack WhatsApp automation suite.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">1. Information We Collect</h2>
             <ul className="list-disc pl-6 space-y-4">
               <li>
-                <strong>WhatsApp Account Access:</strong> When you connect your WhatsApp account, you log into our backend engine as a linked device. This allows us to securely manage the sending of order confirmation messages on your behalf. We have full access to your WhatsApp account for the purpose of sending messages, but we do not interact with or access other features (e.g., chats, media).
+                <strong>WhatsApp Account Access:</strong> When you connect your WhatsApp account, you log into our backend engine as a linked device. This allows us to securely manage all automated messaging on your behalf, including order confirmations, abandoned checkout retrieval, order fulfillment, and cancellation notifications. We have full access to your WhatsApp account for the purpose of sending these automated messages, but we do not interact with or access other features (e.g., chats, media).
               </li>
               <li>
-                <strong>Order Data:</strong> We collect information related to Shopify orders, such as customer details and order statuses, to send the appropriate messages via WhatsApp.
+                <strong>Order & Customer Data:</strong> We collect information related to Shopify orders and customers, such as customer details, cart contents, order statuses, and checkout activities, to send the appropriate messages via WhatsApp at various stages of the customer journey.
               </li>
               <li>
-                <strong>Usage Data:</strong> We collect basic app usage data to enhance performance and functionality.
+                <strong>Usage Data:</strong> We collect basic app usage data to enhance performance and functionality of our automation suite.
               </li>
             </ul>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">2. How We Use Your Information</h2>
             <ul className="list-disc pl-6 space-y-4">
               <li>
-                <strong>Message Delivery:</strong> WhatFlow uses your WhatsApp account to send automated order confirmation messages to customers. Although we have access to your account as a linked device, our interaction is strictly limited to message transmission. No other WhatsApp data, such as conversations or media, is accessed.
+                <strong>Comprehensive Message Automation:</strong> WhatFlow uses your WhatsApp account to send various automated messages to customers throughout their shopping journey, including order confirmations, abandoned cart reminders, fulfillment updates, and cancellation notifications. Although we have access to your account as a linked device, our interaction is strictly limited to automated message transmission. No other WhatsApp data, such as conversations or media, is accessed.
               </li>
               <li>
                 <strong>Data Security:</strong> All communications between your WhatsApp account, our servers, and Shopify are encrypted using secure protocols. We ensure that your WhatsApp data is used only for its intended purpose and is never exposed or shared with third parties.
@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. NoWeb Engine & Account Confidentiality</h2>
             <p className="text-gray-600">
-              Our app runs on a NoWeb engine, meaning there is no interface to access your WhatsApp data beyond sending HTTP requests for message delivery. Your account remains completely confidential, and no sensitive information (chats, media, or contacts) is stored or accessed.
+              Our full-stack automation suite runs on a NoWeb engine, meaning there is no interface to access your WhatsApp data beyond sending HTTP requests for message delivery across all automation types. Your account remains completely confidential, and no sensitive information (chats, media, or contacts) is stored or accessed.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">4. Customer Control</h2>
@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">5. Data Security Measures</h2>
             <p className="text-gray-600">
-              We follow industry-standard security measures, including encryption and secure data storage. Although we access your WhatsApp as a linked device, the scope of interaction is strictly limited to what is necessary for service functionality.
+              We follow industry-standard security measures, including encryption and secure data storage. Although we access your WhatsApp as a linked device, the scope of interaction is strictly limited to what is necessary for our automation suite's functionality, including order confirmations, abandoned cart recovery, fulfillment notifications, and cancellation updates.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">GDPR Compliance</h2>

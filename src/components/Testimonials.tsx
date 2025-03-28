@@ -4,40 +4,40 @@ export default function Testimonials() {
   const testimonials = [
     {
       content:
-        "WhatFlow has completely transformed our customer confirmation process. We've reduced no-shows by 45% and saved countless hours on manual follow-ups.",
+        "WhatFlow's complete automation suite has transformed our e-commerce business. The abandoned cart recovery feature alone increased our monthly revenue by 23%, and the order updates have reduced our support tickets by 40%.",
       author: {
         name: 'Sarah Johnson',
-        role: 'Office Manager, Dental Clinic',
+        role: 'E-commerce Manager, Fashion Retailer',
         imageUrl: '/testimonial-1.jpg',
       },
     },
     {
       content:
-        "Our clients love receiving confirmation messages via WhatsApp. It's more personal than email and more effective than phone calls. WhatFlow made implementation so easy.",
+        "Since implementing WhatFlow's full automation suite, our customer satisfaction scores have increased by 35%. Customers especially love receiving shipping updates and order confirmations through WhatsApp - it feels more personal than email.",
       author: {
         name: 'Michael Chen',
-        role: 'CEO, Beauty Salon Chain',
+        role: 'COO, Electronics Store',
         imageUrl: '/testimonial-2.jpg',
       },
     },
     {
       content:
-        "The automated follow-up feature has helped us collect more customer feedback than ever before. Our service quality has improved significantly thanks to these insights.",
+        "What impresses me most about WhatFlow is how it handles the entire customer journey. From cart abandonment to post-purchase follow-ups, the seamless automation has boosted our repeat purchase rate by 28% in just two months.",
       author: {
         name: 'Emma Rodriguez',
-        role: 'Customer Success Manager',
+        role: 'Digital Marketing Director',
         imageUrl: '/testimonial-3.jpg',
       },
     },
   ];
 
   return (
-    <div className="bg-beige py-24 sm:py-32">
+    <div id="about" className="bg-beige py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-teal">Testimonials</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            See what our customers say
+            See how businesses are growing with our complete automation suite
           </p>
         </div>
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">

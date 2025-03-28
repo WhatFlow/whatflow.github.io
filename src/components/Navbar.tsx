@@ -8,6 +8,18 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // Determine if we're on the home page
+  const isHomePage = pathname === '/';
+
+  // Helper function to create the correct link URL
+  const getLinkUrl = (section: string): string => {
+    if (isHomePage) {
+      return `#${section}`; // Anchor link on home page
+    } else {
+      return `/#${section}`; // Link to home page with anchor
+    }
+  };
+
   return (
     <header className="bg-white sticky top-0 z-50 border-b border-gray-100">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -30,9 +42,9 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           <Link 
-            href="/features" 
+            href={getLinkUrl("features")}
             className={`text-sm font-semibold leading-6 ${
-              pathname === '/features' 
+              pathname === '/features' || (isHomePage && pathname.includes('#features'))
                 ? 'text-teal border-b-2 border-green' 
                 : 'text-gray-900 hover:text-teal'
             }`}
@@ -50,9 +62,9 @@ export default function Navbar() {
             Pricing
           </Link>
           <Link 
-            href="/about" 
+            href={getLinkUrl("about")} 
             className={`text-sm font-semibold leading-6 ${
-              pathname === '/about' 
+              pathname === '/about' || (isHomePage && pathname.includes('#about'))
                 ? 'text-teal border-b-2 border-green' 
                 : 'text-gray-900 hover:text-teal'
             }`}
@@ -72,7 +84,7 @@ export default function Navbar() {
         <div className="lg:hidden" role="dialog" aria-modal="true">
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <Link href="/" className="-m-1.5 p-1.5">
+              <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="text-2xl font-bold bg-gradient-to-r from-teal-dark to-green bg-clip-text text-transparent">WhatFlow</span>
               </Link>
               <button
@@ -90,9 +102,9 @@ export default function Navbar() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   <Link
-                    href="/features"
+                    href={getLinkUrl("features")}
                     className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
-                      pathname === '/features' 
+                      pathname === '/features' || (isHomePage && pathname.includes('#features'))
                         ? 'text-teal bg-green-light/50' 
                         : 'text-gray-900 hover:bg-green-light'
                     }`}
@@ -112,9 +124,9 @@ export default function Navbar() {
                     Pricing
                   </Link>
                   <Link
-                    href="/about"
+                    href={getLinkUrl("about")}
                     className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
-                      pathname === '/about' 
+                      pathname === '/about' || (isHomePage && pathname.includes('#about'))
                         ? 'text-teal bg-green-light/50' 
                         : 'text-gray-900 hover:bg-green-light'
                     }`}

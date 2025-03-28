@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'Pricing - WhatFlow',
-  description: 'Choose the perfect WhatFlow pricing plan for your business needs',
+  description: 'Choose the perfect WhatFlow pricing plan for your complete WhatsApp automation needs - order confirmations, abandoned cart recovery, fulfillment updates, and more',
 };
 
 export default function PricingPage() {
