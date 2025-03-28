@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function Testimonials() {
   const testimonials = [
     {
@@ -22,7 +20,7 @@ export default function Testimonials() {
     },
     {
       content:
-        "We were hesitant about connecting our WhatsApp to a third party, but WhatFlow's security approach won us over. The setup was easy, our conversations remain private, and we've boosted our repeat purchase rate by 28% with automated follow-ups.",
+        "We were hesitant about connecting our WhatsApp to a third party, but WhatFlow&apos;s security approach won us over. The setup was easy, our conversations remain private, and we&apos;ve boosted our repeat purchase rate by 28% with automated follow-ups.",
       author: {
         name: 'Emma Rodriguez',
         role: 'Digital Marketing Director',

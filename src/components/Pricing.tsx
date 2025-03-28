@@ -1,4 +1,3 @@
-import Link from 'next/link';
 
 export default function Pricing() {
   // Common features for all plans since they don't vary
