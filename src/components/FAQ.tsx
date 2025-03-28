@@ -92,7 +92,7 @@ export default function FAQ() {
           <div className="mt-16 text-center">
             <p className="text-gray-600">
               Can't find the answer you're looking for?{' '}
-              <a href="mailto:support@whatflow.com" className="font-medium text-teal hover:text-green">
+              <a href="mailto:support@whatflow.tech" className="font-medium text-teal hover:text-green">
                 Contact our support team
               </a>
             </p>
