@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Pricing() {
   // Common features for all plans since they don't vary
   const commonFeatures = [
-    { name: 'WhatsApp Business API integration', included: true },
+    { name: 'Connect with your regular WhatsApp account', included: true },
     { name: 'Order confirmation automations', included: true },
     { name: 'Abandoned cart recovery', included: true },
     { name: 'Order fulfillment notifications', included: true },
@@ -232,11 +232,24 @@ export default function Pricing() {
         {/* Note about Shopify subscription */}
         <div className="mx-auto max-w-4xl mt-12 text-center">
           <div className="rounded-lg bg-teal-dark/5 p-6">
-            <h3 className="text-lg font-semibold text-teal-dark mb-2">Manage your subscription through Shopify</h3>
-            <p className="text-sm text-gray-600">
-              All plans include the same features. Subscriptions are managed through the Shopify app store.
-              Your plan will automatically adjust based on your messaging volume.
+            <h3 className="text-lg font-semibold text-teal-dark mb-2">Seamless Flex Billing Through Shopify</h3>
+            <p className="text-sm text-gray-600 mb-3">
+              All plans include the same features. Subscriptions are managed through the Shopify app store with our flexible billing system.
             </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+              <div className="bg-white p-3 rounded-lg shadow-sm">
+                <div className="text-teal-dark font-medium mb-1">Automatic Upgrades</div>
+                <p className="text-xs text-gray-600">Your plan automatically adjusts based on your messaging volume, with no manual intervention required.</p>
+              </div>
+              <div className="bg-white p-3 rounded-lg shadow-sm">
+                <div className="text-teal-dark font-medium mb-1">Continuous Service</div>
+                <p className="text-xs text-gray-600">No interruptions when you hit usage limits - smoothly transition between plans without service gaps.</p>
+              </div>
+              <div className="bg-white p-3 rounded-lg shadow-sm">
+                <div className="text-teal-dark font-medium mb-1">Predictable Billing</div>
+                <p className="text-xs text-gray-600">Remain on your upgraded plan for the next cycle with clear communication about all changes.</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -249,6 +262,14 @@ export default function Pricing() {
               <dd className="mt-2 text-sm text-gray-600">Each plan includes a set number of messages per month across all automation types. If you exceed your limit, you'll automatically be upgraded to the next tier to ensure uninterrupted service.</dd>
             </div>
             <div className="pt-6">
+              <dt className="text-lg font-semibold text-gray-900">What happens if I exceed my plan's message limit?</dt>
+              <dd className="mt-2 text-sm text-gray-600">We use flex billing, which automatically upgrades you to the next tier when you reach your limit. Your service continues without interruption, and you'll receive a notification about the change. You don't need to manually upgrade or worry about service disruptions.</dd>
+            </div>
+            <div className="pt-6">
+              <dt className="text-lg font-semibold text-gray-900">How does your flex billing system work?</dt>
+              <dd className="mt-2 text-sm text-gray-600">Unlike traditional subscription models that require manual upgrades, our flex billing system automatically moves you to higher tiers when usage thresholds are met. Your usage doesn't reset monthly, and transitions between billing cycles are smooth with no interruption in service. You'll always remain on your upgraded plan for the next cycle, ensuring predictable billing.</dd>
+            </div>
+            <div className="pt-6">
               <dt className="text-lg font-semibold text-gray-900">Can I downgrade my plan?</dt>
               <dd className="mt-2 text-sm text-gray-600">Yes, you can downgrade your plan at any time through Shopify. Changes will take effect at the start of your next billing cycle.</dd>
             </div>
@@ -257,8 +278,8 @@ export default function Pricing() {
               <dd className="mt-2 text-sm text-gray-600">Yes, all plans include our complete suite of automation features. The only difference between plans is the number of messages you can send per month.</dd>
             </div>
             <div className="pt-6">
-              <dt className="text-lg font-semibold text-gray-900">How do the different automation types work together?</dt>
-              <dd className="mt-2 text-sm text-gray-600">Our platform seamlessly integrates all automation types to create a cohesive customer journey. You can customize each automation independently while maintaining a consistent brand voice across all communications.</dd>
+              <dt className="text-lg font-semibold text-gray-900">Do I need to pay for Shopify separately?</dt>
+              <dd className="mt-2 text-sm text-gray-600">Yes, WhatFlow is a Shopify app that requires an active Shopify subscription. Our pricing is for the WhatFlow service only and is billed through your Shopify account.</dd>
             </div>
           </dl>
         </div>

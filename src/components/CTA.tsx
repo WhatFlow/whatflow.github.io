@@ -8,11 +8,14 @@ export default function CTA() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Transform your e-commerce business
             <br />
-            with complete WhatsApp automation
+            with simple WhatsApp automation
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-green-light">
-            Join hundreds of businesses already using WhatFlow's full automation suite to increase conversions, boost revenue, and deliver exceptional customer experiences throughout the entire shopping journey.
+            Join hundreds of businesses already using WhatFlow to connect their existing WhatsApp accounts for seamless automation, increasing conversions and delivering exceptional customer experiences.
           </p>
+          <div className="mt-4 text-sm text-white/80">
+            No special business accounts needed. Secure. Private. Simple to set up.
+          </div>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link
               href="/get-started"

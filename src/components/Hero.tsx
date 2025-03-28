@@ -41,8 +41,11 @@ export default function Hero() {
             Complete <span className="text-teal">WhatsApp</span> Automation Suite
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            WhatFlow helps businesses boost revenue and engagement with a full stack of WhatsApp automations - from order confirmations and abandoned cart recovery to fulfillment notifications and cancellation updates.
+            WhatFlow helps businesses boost revenue and engagement by connecting to your existing WhatsApp account to deliver automated messages - from order confirmations and abandoned cart recovery to fulfillment notifications and cancellation updates.
           </p>
+          <div className="mt-4 text-sm text-gray-500">
+            <span className="font-semibold">Simple integration:</span> No complex API setup or business account required - connect in minutes using WhatsApp's "link a device" feature.
+          </div>
           <div className="mt-10 flex items-center justify-start gap-x-6">
             <Link
               href="/get-started"

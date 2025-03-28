@@ -42,15 +42,19 @@ export default function FAQ() {
   const faqs = [
     {
       question: "How does WhatFlow's automation suite work?",
-      answer: "WhatFlow connects to your WhatsApp Business API and Shopify store to automate communication throughout the customer journey. It handles order confirmations, abandoned cart recovery, shipping updates, and order cancellations, all while maintaining a personal touch with customizable templates."
+      answer: "WhatFlow uses WhatsApp's 'link a device' feature to securely connect to your WhatsApp account. Once connected, our platform automates communication throughout the customer journey, handling order confirmations, abandoned cart recovery, shipping updates, and order cancellations, all with customizable templates that maintain your brand voice."
     },
     {
       question: "Do I need a WhatsApp Business API account?",
-      answer: "Yes, you need a WhatsApp Business API account to use WhatFlow. We can help guide you through the application process if you don't already have one. This API access is what allows our automation to send messages on your behalf."
+      answer: "No, you don't need the WhatsApp Business API. WhatFlow works with regular WhatsApp accounts and takes a simpler approach. You just need to link your WhatsApp account through our secure setup process, similar to how you'd connect WhatsApp Web on your computer."
+    },
+    {
+      question: "Is my WhatsApp data secure with WhatFlow?",
+      answer: "Absolutely. Our NoWeb engine only interacts with WhatsApp to send your automated messages - we never access, read, or store your existing conversations, contacts, or media. Our connection is limited strictly to the automation features you enable, and you can disconnect anytime with a single click."
     },
     {
       question: "Can I customize the automated messages?",
-      answer: "Absolutely! WhatFlow provides customizable templates for each automation type. You can personalize the content, add your brand voice, include dynamic product information, and tailor the messaging to match your communication style."
+      answer: "Yes! WhatFlow provides customizable templates for each automation type. You can personalize the content, add your brand voice, include dynamic product information, and tailor the messaging to match your communication style."
     },
     {
       question: "How does the abandoned cart recovery feature work?",
@@ -58,7 +62,7 @@ export default function FAQ() {
     },
     {
       question: "Will I be notified of customer responses?",
-      answer: "Yes, any customer responses to automated messages will be forwarded to your WhatsApp Business account where you can continue the conversation personally. This creates a seamless transition from automation to personal service when needed."
+      answer: "Yes, any customer responses to automated messages will appear directly in your WhatsApp account where you can continue the conversation personally. This creates a seamless transition from automation to personal service when needed."
     },
     {
       question: "How does the pricing model work?",

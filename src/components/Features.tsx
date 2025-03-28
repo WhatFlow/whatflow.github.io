@@ -60,6 +60,16 @@ export default function Features() {
         </svg>
       ),
     },
+    {
+      name: 'Simple WhatsApp Integration',
+      description:
+        'Connect in minutes using WhatsApp\'s "link a device" feature - no complex API setup or business account required. Works with your existing WhatsApp account.',
+      icon: (
+        <svg className="h-6 w-6 text-teal" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+        </svg>
+      ),
+    },
   ];
 
   return (
@@ -71,7 +81,7 @@ export default function Features() {
             Complete WhatsApp automation for every stage of the customer journey
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            WhatFlow provides a comprehensive suite of WhatsApp automations that engage customers throughout their shopping experience, from browsing to post-purchase, maximizing revenue and satisfaction.
+            WhatFlow connects to your existing WhatsApp account to provide a comprehensive suite of automations that engage customers throughout their shopping experience, from browsing to post-purchase, maximizing revenue and satisfaction.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

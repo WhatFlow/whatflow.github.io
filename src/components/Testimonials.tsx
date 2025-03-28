@@ -4,7 +4,7 @@ export default function Testimonials() {
   const testimonials = [
     {
       content:
-        "WhatFlow's complete automation suite has transformed our e-commerce business. The abandoned cart recovery feature alone increased our monthly revenue by 23%, and the order updates have reduced our support tickets by 40%.",
+        "WhatFlow has transformed how we connect with customers. The integration was incredibly simple - we just linked our existing WhatsApp account and set up the automations. The abandoned cart recovery feature alone increased our monthly revenue by 23%.",
       author: {
         name: 'Sarah Johnson',
         role: 'E-commerce Manager, Fashion Retailer',
@@ -13,7 +13,7 @@ export default function Testimonials() {
     },
     {
       content:
-        "Since implementing WhatFlow's full automation suite, our customer satisfaction scores have increased by 35%. Customers especially love receiving shipping updates and order confirmations through WhatsApp - it feels more personal than email.",
+        "What I love about WhatFlow is how fast we got it running. No complex API setup - just connected our regular WhatsApp account and we were sending automated updates in minutes. Our customer satisfaction scores have increased by 35%.",
       author: {
         name: 'Michael Chen',
         role: 'COO, Electronics Store',
@@ -22,7 +22,7 @@ export default function Testimonials() {
     },
     {
       content:
-        "What impresses me most about WhatFlow is how it handles the entire customer journey. From cart abandonment to post-purchase follow-ups, the seamless automation has boosted our repeat purchase rate by 28% in just two months.",
+        "We were hesitant about connecting our WhatsApp to a third party, but WhatFlow's security approach won us over. The setup was easy, our conversations remain private, and we've boosted our repeat purchase rate by 28% with automated follow-ups.",
       author: {
         name: 'Emma Rodriguez',
         role: 'Digital Marketing Director',
@@ -37,7 +37,7 @@ export default function Testimonials() {
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-teal">Testimonials</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            See how businesses are growing with our complete automation suite
+            See how businesses are growing with simple WhatsApp automation
           </p>
         </div>
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
