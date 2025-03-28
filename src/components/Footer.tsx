@@ -30,6 +30,14 @@ export default function Footer() {
           <p className="text-center text-xs leading-5 text-teal-dark">
             &copy; {new Date().getFullYear()} WhatFlow. All rights reserved.
           </p>
+          <div className="mt-2 flex justify-center space-x-4 text-xs text-teal">
+            <Link href="/privacy-policy" className="hover:text-green">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-green">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
