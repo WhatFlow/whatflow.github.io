@@ -2,9 +2,11 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="bg-white sticky top-0 z-50 border-b border-gray-100">
@@ -27,13 +29,34 @@ export default function Navbar() {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <Link href="/features" className="text-sm font-semibold leading-6 text-gray-900 hover:text-teal">
+          <Link 
+            href="/features" 
+            className={`text-sm font-semibold leading-6 ${
+              pathname === '/features' 
+                ? 'text-teal border-b-2 border-green' 
+                : 'text-gray-900 hover:text-teal'
+            }`}
+          >
             Features
           </Link>
-          <Link href="/pricing" className="text-sm font-semibold leading-6 text-gray-900 hover:text-teal">
+          <Link 
+            href="/pricing" 
+            className={`text-sm font-semibold leading-6 ${
+              pathname === '/pricing' 
+                ? 'text-teal border-b-2 border-green' 
+                : 'text-gray-900 hover:text-teal'
+            }`}
+          >
             Pricing
           </Link>
-          <Link href="/about" className="text-sm font-semibold leading-6 text-gray-900 hover:text-teal">
+          <Link 
+            href="/about" 
+            className={`text-sm font-semibold leading-6 ${
+              pathname === '/about' 
+                ? 'text-teal border-b-2 border-green' 
+                : 'text-gray-900 hover:text-teal'
+            }`}
+          >
             About
           </Link>
         </div>
@@ -68,21 +91,33 @@ export default function Navbar() {
                 <div className="space-y-2 py-6">
                   <Link
                     href="/features"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-green-light"
+                    className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                      pathname === '/features' 
+                        ? 'text-teal bg-green-light/50' 
+                        : 'text-gray-900 hover:bg-green-light'
+                    }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Features
                   </Link>
                   <Link
                     href="/pricing"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-green-light"
+                    className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                      pathname === '/pricing' 
+                        ? 'text-teal bg-green-light/50' 
+                        : 'text-gray-900 hover:bg-green-light'
+                    }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Pricing
                   </Link>
                   <Link
                     href="/about"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-green-light"
+                    className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                      pathname === '/about' 
+                        ? 'text-teal bg-green-light/50' 
+                        : 'text-gray-900 hover:bg-green-light'
+                    }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     About
