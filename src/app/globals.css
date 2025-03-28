@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --teal-dark: #075e54;
+  --teal: #128c7e;
+  --green: #25d366;
+  --green-light: #dcf8c6;
+  --beige: #ece5dd;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom color classes */
+.text-teal-dark {
+  color: var(--teal-dark);
+}
+.text-teal {
+  color: var(--teal);
+}
+.text-green {
+  color: var(--green);
+}
+.bg-teal-dark {
+  background-color: var(--teal-dark);
+}
+.bg-teal {
+  background-color: var(--teal);
+}
+.bg-green {
+  background-color: var(--green);
+}
+.bg-green-light {
+  background-color: var(--green-light);
+}
+.bg-beige {
+  background-color: var(--beige);
+}
