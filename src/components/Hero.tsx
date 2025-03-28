@@ -48,8 +48,10 @@ export default function Hero() {
           </div>
           <div className="mt-10 flex items-center justify-start gap-x-6">
             <Link
-              href="/get-started"
+              href="https://apps.shopify.com/whatflow"
               className="rounded-md bg-green px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Get started
             </Link>

@@ -73,7 +73,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="/get-started" className="rounded-md bg-green px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green">
+          <Link href="https://apps.shopify.com/whatflow" className="rounded-md bg-green px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green" target="_blank" rel="noopener noreferrer">
             Get Started
           </Link>
         </div>
@@ -137,7 +137,7 @@ export default function Navbar() {
                 </div>
                 <div className="py-6">
                   <Link
-                    href="/get-started"
+                    href="https://apps.shopify.com/whatflow"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-green-light"
                     onClick={() => setMobileMenuOpen(false)}
                   >
