@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -22,10 +23,17 @@ export default function Navbar() {
 
   return (
     <header className="bg-white sticky top-0 z-50 border-b border-gray-100">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between py-2 px-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-bold bg-gradient-to-r from-teal-dark to-green bg-clip-text text-transparent">WhatFlow</span>
+          <Link href="/" className="py-0 flex items-center">
+            <Image
+              src="/emblem.png"
+              alt="WhatFlow Logo"
+              width={180}
+              height={50}
+              className="h-auto w-auto max-h-12"
+              priority
+            />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -73,7 +81,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="https://apps.shopify.com/whatflow" className="rounded-md bg-green px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green" target="_blank" rel="noopener noreferrer">
+          <Link href="https://apps.shopify.com/whatflow" className="rounded-md bg-green px-3.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green" target="_blank" rel="noopener noreferrer">
             Get Started
           </Link>
         </div>
@@ -84,8 +92,14 @@ export default function Navbar() {
         <div className="lg:hidden" role="dialog" aria-modal="true">
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-                <span className="text-2xl font-bold bg-gradient-to-r from-teal-dark to-green bg-clip-text text-transparent">WhatFlow</span>
+              <Link href="/" className="py-0" onClick={() => setMobileMenuOpen(false)}>
+                <Image
+                  src="/emblem.png"
+                  alt="WhatFlow Logo"
+                  width={150}
+                  height={40}
+                  className="h-auto w-auto max-h-10"
+                />
               </Link>
               <button
                 type="button"
