@@ -39,6 +39,7 @@ export default function Terms() {
               <li><strong>Connection Maintenance:</strong> You are responsible for maintaining a secure connection to your WhatsApp account. Ensure that your account remains active and accessible for our automation suite to function properly.</li>
               <li><strong>Compliance:</strong> You agree to use WhatFlow in compliance with all applicable laws and regulations, including WhatsApp's terms of service and commerce policies.</li>
               <li><strong>Message Content:</strong> You are responsible for ensuring that the content of automated messages complies with relevant regulations, including those concerning marketing communications and privacy.</li>
+              <li><strong>Number Warming:</strong> You acknowledge that using a WhatsApp number that has not been properly "warmed up" (active for at least six months with a regular messaging history) carries significant risk. WhatsApp may permanently ban numbers that suddenly send high volumes of messages without an established history. To mitigate this risk, you should either: (1) use an established, active WhatsApp number, or (2) if using a newer number, start with lower message volumes and gradually increase the load over several weeks. WhatFlow is not responsible for WhatsApp-imposed restrictions or bans resulting from using non-warmed up numbers.</li>
             </ul>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">4. Customer Control</h2>

@@ -15,14 +15,16 @@ export const metadata = {
 export default function Home() {
   return (
     <main>
-      <Navbar />
-      <Hero />
-      <Features />
-      <AppScreenshot />
-      <Testimonials />
-      <FAQ />
-      <CTA />
-      <Footer />
+      <div className="bg-white">
+        <Navbar />
+        <Hero />
+        <AppScreenshot />
+        <Features />
+        <Testimonials />
+        <FAQ />
+        <CTA />
+        <Footer />
+      </div>
     </main>
   );
 }
