@@ -43,9 +43,9 @@ export default function PrivacyPolicy() {
               </li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. NoWeb Engine & Account Confidentiality</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. Browserless & Account Confidentiality</h2>
             <p className="text-gray-600">
-              Our full-stack automation suite runs on a NoWeb engine, meaning there is no interface to access your WhatsApp data beyond sending HTTP requests for message delivery across all automation types. Your account remains completely confidential, and no sensitive information (chats, media, or contacts) is stored or accessed.
+              Our full-stack automation suite runs browserless, meaning there is no interface to access your WhatsApp data beyond sending HTTP requests for message delivery across all automation types. Your account remains completely confidential, and no sensitive information (chats, media, or contacts) is stored or accessed.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">4. Customer Control</h2>

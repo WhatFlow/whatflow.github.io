@@ -54,7 +54,7 @@ export default function Terms() {
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">5. Data Security</h2>
             <p className="text-gray-600">
-              WhatFlow utilizes NoWeb technology to send messages on your behalf, without interacting with your WhatsApp interface or data beyond what is necessary to deliver our full suite of automated communications. We ensure your account data is kept secure and is not shared with third parties.
+              WhatFlow utilizes websockets to send messages on your behalf, without interacting with your WhatsApp interface or data beyond what is necessary to deliver our full suite of automated communications. We ensure your account data is kept secure and is not shared with third parties.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">6. Data Privacy</h2>

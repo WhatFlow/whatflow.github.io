@@ -16,7 +16,7 @@ export default function Navbar() {
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">WhatFlow</span>
             <Image
-              src="public\logo.png"
+              src="/logo.png"
               alt="WhatFlow Logo"
               width={125}
               height={32}
@@ -89,7 +89,7 @@ export default function Navbar() {
               <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">WhatFlow</span>
                 <Image
-                  src="public\logo.png"
+                  src="/logo.png"
                   alt="WhatFlow Logo"
                   width={125}
                   height={32}

@@ -50,7 +50,7 @@ export default function FAQ() {
     },
     {
       question: "Is my WhatsApp data secure with WhatFlow?",
-      answer: "Absolutely. Our NoWeb engine only interacts with WhatsApp to send your automated messages - we never access, read, or store your existing conversations, contacts, or media. Our connection is limited strictly to the automation features you enable, and you can disconnect anytime with a single click."
+      answer: "Absolutely. Our browserless technology only interacts with WhatsApp to send your automated messages - we never access, read, or store your existing conversations, contacts, or media. Our connection is limited strictly to the automation features you enable, and you can disconnect anytime with a single click."
     },
     {
       question: "Can I customize the automated messages?",
