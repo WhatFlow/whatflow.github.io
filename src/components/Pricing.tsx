@@ -24,8 +24,8 @@ export default function Pricing() {
       name: 'Starter',
       description: 'Ideal for small businesses beginning to leverage WhatsApp automation.',
       price: '$4.99',
-      limit: '2,500 messages',
-      nextTier: 'Up to 2,500 messages, then auto-upgrades to Growth plan.',
+      limit: '1,500 messages',
+      nextTier: 'Up to 1,500 messages, then auto-upgrades to Growth plan.',
       featured: false,
       additionalFeature: '3-day free trial'
     },
@@ -33,8 +33,8 @@ export default function Pricing() {
       name: 'Growth',
       description: 'Perfect for growing businesses with increasing automation needs.',
       price: '$9.99',
-      limit: '5,000 messages',
-      nextTier: 'Up to 5,000 messages, then auto-upgrades to Professional plan.',
+      limit: '3,000 messages',
+      nextTier: 'Up to 3,000 messages, then auto-upgrades to Professional plan.',
       featured: true,
       popular: 'Most Popular'
     },
@@ -42,16 +42,16 @@ export default function Pricing() {
       name: 'Professional',
       description: 'Designed for established businesses with substantial customer communication.',
       price: '$14.99',
-      limit: '10,000 messages',
-      nextTier: 'Up to 10,000 messages, then auto-upgrades to Enterprise plan.',
+      limit: '5,000 messages',
+      nextTier: 'Up to 5,000 messages, then auto-upgrades to Enterprise plan.',
       featured: false
     },
     {
       name: 'Enterprise',
       description: 'For high-volume businesses that need extensive automation capabilities.',
       price: '$24.99',
-      limit: '25,000 messages',
-      nextTier: 'Up to 25,000 messages, then auto-upgrades to Ultimate plan.',
+      limit: '12,500 messages',
+      nextTier: 'Up to 12,500 messages, then auto-upgrades to Ultimate plan.',
       featured: false
     },
     {
