@@ -81,6 +81,36 @@ export default function Features() {
         </svg>
       ),
     },
+    {
+      name: 'Bulk Messenger with CSV Upload',
+      description:
+        'Send personalized messages to multiple customers at once by uploading a CSV file. Perfect for promotional campaigns, announcements, or targeted marketing - absolutely free.',
+      icon: (
+        <svg className="h-6 w-6 text-teal" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 18.75H5.625a1.125 1.125 0 01-1.125-1.125V5.625A1.125 1.125 0 015.625 4.5h4.125m0 0V1.875A1.875 1.875 0 0111.625 0h.75c1.035 0 1.875.84 1.875 1.875V4.5m-7.5 0h7.5m-7.5 10.5h7.5" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Back in Stock Alerts',
+      description:
+        'Automatically notify customers when out-of-stock products become available again. Increase sales by reconnecting with interested customers the moment inventory is replenished - absolutely free.',
+      icon: (
+        <svg className="h-6 w-6 text-teal" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5" />
+        </svg>
+      ),
+    },
+    {
+      name: 'WhatsApp Button for Storefront',
+      description:
+        'Add a customizable WhatsApp contact button to your store with advanced styling options, positioning controls, and personalized messages. Enhance customer support accessibility - absolutely free.',
+      icon: (
+        <svg className="h-6 w-6 text-teal" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+        </svg>
+      ),
+    },
   ];
 
   return (
