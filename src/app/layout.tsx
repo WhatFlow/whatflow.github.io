@@ -38,13 +38,11 @@ export const metadata: Metadata = {
       { rel: 'manifest', url: '/manifest.json' }
     ]
   },
-  themeColor: '#ffffff',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
     title: "WhatFlow"
   },
-  viewport: 'width=device-width, initial-scale=1',
   manifest: '/manifest.json',
 };
 

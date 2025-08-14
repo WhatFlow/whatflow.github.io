@@ -1,173 +1,172 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const linkClasses = (path: string) =>
+    pathname === path
+      ? 'relative text-green-600 font-semibold after:absolute after:left-0 after:bottom-[-4px] after:h-[3px] after:w-full after:bg-gradient-to-r after:from-green-500 after:to-emerald-400 after:rounded-full after:transition-all'
+      : 'relative text-gray-800 text-lg font-semibold hover:text-green-600 transition duration-300 after:absolute after:left-1/2 after:bottom-[-4px] after:h-[3px] after:w-0 hover:after:w-full hover:after:left-0 after:bg-gradient-to-r after:from-green-500 after:to-emerald-400 after:rounded-full after:transition-all';
+
   return (
-    <header className="bg-white">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">WhatFlow</span>
+    <header
+      className={`sticky top-0 z-50 transition-all ${
+        scrolled
+          ? 'bg-white/80 backdrop-blur-md shadow-md'
+          : 'bg-white shadow-sm'
+      }`}
+    >
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4 }}
+          className="flex lg:flex-1 items-center"
+        >
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
             <Image
               src="/logo.png"
               alt="WhatFlow Logo"
-              width={125}
+              width={150}
               height={32}
-              className="h-8 w-auto"
+              className="h-8"
               priority
             />
           </Link>
-        </div>
+        </motion.div>
+
+        {/* Mobile Menu Button */}
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-green-50 hover:text-green-600 transition"
             onClick={() => setMobileMenuOpen(true)}
           >
-            <span className="sr-only">Open main menu</span>
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-16 6h16" />
             </svg>
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          <Link 
-            href="/features" 
-            className={pathname === '/features' 
-              ? 'text-teal border-b-2 border-green text-sm font-semibold leading-6' 
-              : 'text-gray-900 hover:text-teal text-sm font-semibold leading-6'
-            }
-          >
-            Features
-          </Link>
-          <Link 
-            href="/pricing" 
-            className={pathname === '/pricing' 
-              ? 'text-teal border-b-2 border-green text-sm font-semibold leading-6' 
-              : 'text-gray-900 hover:text-teal text-sm font-semibold leading-6'
-            }
-          >
-            Pricing
-          </Link>
-          <Link 
-            href="/resources" 
-            className={pathname === '/resources' 
-              ? 'text-teal border-b-2 border-green text-sm font-semibold leading-6' 
-              : 'text-gray-900 hover:text-teal text-sm font-semibold leading-6'
-            }
-          >
-            Resources
-          </Link>
-          <Link 
-            href="/about" 
-            className={pathname === '/about' 
-              ? 'text-teal border-b-2 border-green text-sm font-semibold leading-6' 
-              : 'text-gray-900 hover:text-teal text-sm font-semibold leading-6'
-            }
-          >
-            About
-          </Link>
+
+        {/* Desktop Nav Links */}
+        <div className="hidden lg:flex lg:gap-x-10 relative">
+          {['/features', '/pricing', '/resources', '/about'].map((path, i) => (
+            <Link key={i} href={path} className={linkClasses(path)}>
+              {path.replace('/', '').charAt(0).toUpperCase() + path.slice(2)}
+            </Link>
+          ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="https://apps.shopify.com/whatflow" className="text-sm font-semibold leading-6 text-gray-900" target="_blank" rel="noopener noreferrer">
-            Install Now <span aria-hidden="true">&rarr;</span>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="hidden lg:flex lg:flex-1 lg:justify-end"
+        >
+          <Link
+            href="https://apps.shopify.com/whatflow"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-6 inline-flex items-center px-5 py-2.5 rounded-full bg-green-600 text-white font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all"
+          >
+            Install Now
           </Link>
-        </div>
+        </motion.div>
       </nav>
-      {mobileMenuOpen && (
-        <div className="lg:hidden" role="dialog" aria-modal="true">
-          <div className="fixed inset-0 z-50"></div>
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
-              <Link href="/" className="-m-1.5 p-1.5">
-                <span className="sr-only">WhatFlow</span>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="lg:hidden fixed inset-0 z-50 bg-black/40"
+          >
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              className="fixed right-0 top-0 h-full w-72 bg-white shadow-lg p-6 flex flex-col"
+            >
+              <div className="flex items-center justify-between">
                 <Image
                   src="/logo.png"
                   alt="WhatFlow Logo"
-                  width={125}
-                  height={32}
-                  className="h-8 w-auto"
-                  priority
+                  width={110}
+                  height={28}
+                  className="h-7 w-auto"
                 />
-              </Link>
-              <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="sr-only">Close menu</span>
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  <Link
-                    href="/features"
-                    className={pathname === '/features' 
-                      ? '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-teal bg-gray-50' 
-                      : '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 text-gray-700 hover:text-green-600 transition"
+                >
+                  <svg
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
                   >
-                    Features
-                  </Link>
-                  <Link
-                    href="/pricing"
-                    className={pathname === '/pricing' 
-                      ? '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-teal bg-gray-50' 
-                      : '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Pricing
-                  </Link>
-                  <Link
-                    href="/resources"
-                    className={pathname === '/resources' 
-                      ? '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-teal bg-gray-50' 
-                      : '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Resources
-                  </Link>
-                  <Link
-                    href="/about"
-                    className={pathname === '/about' 
-                      ? '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-teal bg-gray-50' 
-                      : '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
-                    }
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    About
-                  </Link>
-                </div>
-                <div className="py-6">
-                  <Link
-                    href="https://apps.shopify.com/whatflow"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Install Now
-                  </Link>
-                </div>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
+
+              <div className="mt-8 flex flex-col gap-4">
+                {['/features', '/pricing', '/resources', '/about'].map((path, i) => (
+                  <Link
+                    key={i}
+                    href={path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`${linkClasses(path)} block text-lg`}
+                  >
+                    {path.replace('/', '').charAt(0).toUpperCase() + path.slice(2)}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="mt-auto pt-6">
+                <Link
+                  href="https://apps.shopify.com/whatflow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-center px-5 py-2.5 rounded-full bg-green-600 text-white font-medium shadow-md hover:bg-green-700 transition"
+                >
+                  Install Now
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
-} 
+}
