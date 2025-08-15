@@ -20,11 +20,13 @@
 body {
   background: var(--background);
   color: var(--foreground);
+
 }
 
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Custom color classes */

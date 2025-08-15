@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.34.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.6.2",
+    "motion": "^12.23.12",
     "next": "15.2.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-top-loading-bar": "^3.0.2",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
