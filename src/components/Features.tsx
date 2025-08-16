@@ -231,25 +231,22 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="relative bg-gradient-to-b from-white via-green-50 to-white py-24 sm:py-32"
+      className="relative isolate overflow-hidden bg-gradient-to-br from-white via-teal-50 to-green-50 py-24 sm:py-32"
     >
-      {/* Decorative Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-green-100/20 to-transparent blur-3xl" />
-        <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-teal-100/20 to-transparent blur-3xl" />
-      </div>
+      {/* Animated Gradient Glow */}
+      {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_rgba(56,189,248,0.15),transparent_60%)] animate-pulse"></div> */}
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
-            Full-Stack Automation
+            FEATURES
           </h2>
           <p className="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Complete {" "}
-           <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
-            WhatsApp automation{" "}
-          </span>
+            Complete{" "}
+            <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
+              WhatsApp automation{" "}
+            </span>
             for every stage of the customer journey
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">

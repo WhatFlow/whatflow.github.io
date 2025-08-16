@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -25,7 +24,7 @@ const FeatureCard = ({ icon, title, text, index }: FeatureCardProps) => {
         scale: 1.02,
         transition: { duration: 0.3, ease: "easeOut" },
       }}
-      className="relative flex flex-col items-center text-center p-8 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300"
+      className="relative flex flex-col h-full   items-center text-center p-8 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -150,6 +149,8 @@ const features = [
 export default function AppScreenshot() {
   return (
     <div className="py-20 bg-gradient-to-br from-white via-teal-50 to-green-50 relative">
+      {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_rgba(56,189,248,0.15),transparent_60%)] animate-pulse"></div> */}
+
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Heading */}
         <div className="mx-auto max-w-3xl text-center">
@@ -186,21 +187,25 @@ export default function AppScreenshot() {
             />
           </div>
           {/* Glow Background */}
-          <div className="absolute -z-10 w-[110%] h-[110%] bg-gradient-to-r from-green-100/40 via-teal-100/40 to-green-50/40 blur-3xl rounded-3xl"></div>
+          <div className="absolute -z-10 w-[100%] h-[100%] bg-gradient-to-r from-green-100/40 via-teal-100/40 to-green-50/40 blur-3xl rounded-3xl"></div>
         </div>
 
         {/* Feature Cards */}
-        <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, idx) => (
-            <FeatureCard
-              key={idx}
-              icon={feature.icon}
-              title={feature.title}
-              text={feature.text}
-              index={idx}
-            />
-          ))}
-        </div>
+        <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+  {features.map((feature, idx) => (
+    <div key={idx} className={`
+      ${idx === features.length - 1 ? "sm:col-span-2 lg:col-span-1" : ""}
+    `}>
+      <FeatureCard
+        icon={feature.icon}
+        title={feature.title}
+        text={feature.text}
+        index={idx}
+      />
+    </div>
+  ))}
+</div>
+
       </div>
     </div>
   );

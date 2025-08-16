@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Animated Gradient Glow */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_rgba(56,189,248,0.15),transparent_60%)] animate-pulse"></div>
 
-      <div className="mx-auto max-w-7xl ps-6 pt-10 pb-24 sm:pb-32 lg:flex lg:py-24 lg:ps-8">
+      <div className="mx-auto max-w-7xl pe-6 sm:pe-0 ps-6 pt-10 pb-24 sm:pb-32 lg:flex lg:py-24 lg:ps-8">
         {/* Text Section */}
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:pt-8">
           <div className="mt-16 sm:mt-24 lg:mt-8">
@@ -16,7 +16,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <h1 className="mt-10 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-[53px]">
+          <h1 className="mt-10 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-[53px] lg:text-5xl xl:text-[53px]">
             Complete <span className="text-teal-600 drop-shadow-sm">WhatsApp</span> Automation Suite
           </h1>
 
@@ -49,9 +49,9 @@ export default function Hero() {
         </div>
 
         {/* Circular 3D Card Gallery */}
-        <div className="mx-auto mt-16 lg:ml-10 lg:mt-0 flex justify-center space-x-[-6rem] relative perspective-[2000px]">
+        <div className="sm:mx-auto mt-16 lg:ml-10 lg:mt-0 flex justify-center items-center flex-col sm:flex-row sm:space-x-[-6rem] relative sm:perspective-[2000px]">
           
-          <div className="relative w-[24rem] h-[33rem] rounded-3xl backdrop-blur-lg bg-white/80 border border-gray-200 shadow-2xl p-6 transform rotate-y-[-15deg] hover:rotate-y-0 transition-transform duration-500">
+          <div className="relative w-[24rem] h-[33rem] lg:w-[20rem] lg:h-[33rem] xl:w-[24rem] xl:h-[33rem] rounded-3xl backdrop-blur-lg bg-white/80 border border-gray-200 shadow-2xl p-6 transform rotate-y-[-15deg] hover:rotate-y-0 transition-transform duration-500">
             <ChatCard
               title="Abandoned Checkout"
               messages={[
@@ -65,7 +65,7 @@ export default function Hero() {
           </div>
 
           
-          <div className="relative w-[24rem] h-[33rem] rounded-3xl backdrop-blur-lg bg-white/80 border border-gray-200 shadow-2xl p-6 transform rotate-y-[15deg] scale-[0.9] hover:rotate-y-0 hover:scale-[1.02] transition-transform duration-500">
+          <div className="hidden sm:block relative w-[24rem] h-[33rem] lg:w-[20rem] lg:h-[33rem] xl:w-[24rem] xl:h-[33rem] rounded-3xl backdrop-blur-lg bg-white/80 border border-gray-200 shadow-2xl p-6 transform rotate-y-[15deg] scale-[0.9] hover:rotate-y-0 hover:scale-[1.02] transition-transform duration-500">
             <ChatCard
               title="Order Fulfillment"
               messages={[
