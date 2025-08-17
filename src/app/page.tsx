@@ -38,9 +38,9 @@ export default function Home() {
       <Hero />
       <AppScreenshot />
       <Features />
+      <CTA />
       <Testimonials />
       <FAQ />
-      <CTA />
       <Footer />
     </main>
   );

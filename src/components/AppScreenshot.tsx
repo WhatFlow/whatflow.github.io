@@ -24,7 +24,7 @@ const FeatureCard = ({ icon, title, text, index }: FeatureCardProps) => {
         scale: 1.02,
         transition: { duration: 0.3, ease: "easeOut" },
       }}
-      className="relative flex flex-col h-full   items-center text-center p-8 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300"
+      className="relative flex flex-col h-full items-center text-center p-8 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -192,20 +192,22 @@ export default function AppScreenshot() {
 
         {/* Feature Cards */}
         <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-  {features.map((feature, idx) => (
-    <div key={idx} className={`
+          {features.map((feature, idx) => (
+            <div
+              key={idx}
+              className={`
       ${idx === features.length - 1 ? "sm:col-span-2 lg:col-span-1" : ""}
-    `}>
-      <FeatureCard
-        icon={feature.icon}
-        title={feature.title}
-        text={feature.text}
-        index={idx}
-      />
-    </div>
-  ))}
-</div>
-
+    `}
+            >
+              <FeatureCard
+                icon={feature.icon}
+                title={feature.title}
+                text={feature.text}
+                index={idx}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

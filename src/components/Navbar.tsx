@@ -94,7 +94,7 @@ export default function Navbar() {
             href="https://apps.shopify.com/whatflow"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-6 inline-flex items-center px-5 py-2.5 rounded-full bg-green-600 text-white font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all"
+            className="ml-6 inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-green-500 to-teal-500 text-white font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all"
           >
             Install Now
           </Link>

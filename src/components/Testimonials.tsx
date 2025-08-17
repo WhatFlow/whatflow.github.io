@@ -1,83 +1,192 @@
+// "use client";
+
+// import { IconStarFilled } from "@tabler/icons-react";
+// import { motion } from "framer-motion";
+
+// export default function Testimonials() {
+//   const testimonials = [
+//     {
+//       quote:
+//         "As the owner of Republic by Omar Farooq, a premium menswear brand, I’ve been using WhatFlow for WhatsApp automation on my Shopify store, and the results have been outstanding. Since integrating the app, I've seen a sales recovery rate of up to 70%. The automation has streamlined our customer communication, improved response times, and allowed us to engage with potential buyers in a much more personalized way. It’s been a game-changer for converting abandoned carts into actual sales. The user interface is intuitive and easy to set up, and the customer support team is always available and responsive. I highly recommend WhatFlow for any Shopify store looking to boost sales and enhance customer interaction through WhatsApp.",
+//       name: "Republic by Omar Farooq",
+//       country: "🇵🇰 Pakistan",
+//       rating: 5,
+//       initials: "OF",
+//       highlight: true,
+//     },
+//     {
+//       quote:
+//         "Literally its very great app it solves the major COD order problem under one solution, we used the order notifier, and every customer is happy now.",
+//       name: "Attire and Co",
+//       country: "🇦🇪 UAE",
+//       rating: 5,
+//       initials: "AC",
+//     },
+//     {
+//       quote:
+//         "This app is a lifesaver for my business! The abandoned checkout retrieval has significantly boosted my conversions, and the automated order confirmation, fulfillment, and cancellation messages keep everything running smoothly. No more manual follow-ups—WhatFlow does it all for me! Easy to set up, reliable, and the support team is always helpful. If you run a Shopify store, this is a must-have!",
+//       name: "SKNS.PK",
+//       country: "🇺🇸 United States",
+//       rating: 5,
+//       initials: "SK",
+//     },
+//     {
+//       quote:
+//         "Excellent product. The interface is incredibly intuitive and easy to navigate. It works perfectly as advertised, and the support team is fantastic. A five-star experience!",
+//       name: "Original Parfum Decants",
+//       country: "🇨🇴 Colombia",
+//       rating: 5,
+//       initials: "OPD",
+//     },
+//     {
+//       quote:
+//         "Just started using this app, and honestly it's very easy to use, I was previously using another app which does same work but thought I'd try this one, and honestly Whatflow is way too easy to manage and thanks to Tags feature, catering the orders daily is pretty simple, easy and manageable now!",
+//       name: "Dhaka Dash",
+//       country: "🇧🇩 Bangladesh",
+//       rating: 5,
+//       initials: "DD",
+//     },
+//   ];
+
+//   return (
+//     <div className="py-24 relative isolate overflow-hidden bg-gradient-to-br from-white via-teal-50 to-green-50">
+//       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+//         {/* Section Heading */}
+//         <div className="mx-auto max-w-2xl text-center">
+//           <h2 className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
+//             TESTIMONIALS
+//           </h2>
+//           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+//             See how businesses grow with{" "}
+//             <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
+//               WhatsApp automation
+//             </span>
+//           </h2>
+//           <p className="mt-3 text-gray-600">
+//             Real stories from our customers about how automation made their work
+//             easier, faster, and more profitable.
+//           </p>
+//         </div>
+
+//         {/* Marquee Carousel */}
+//         <div className="mt-16 overflow-hidden bg-transparent">
+//           <motion.div
+//             className="flex gap-8"
+//             animate={{ x: ["0%", "-100%"] }}
+//             transition={{ ease: "linear", duration: 25, repeat: Infinity }}
+//           >
+//             {[...testimonials, ...testimonials].map((t, idx) => (
+//               <div
+//                 key={idx}
+//                 className="min-w-[350px] max-w-sm flex-shrink-0 rounded-2xl 
+//              bg-white ring-gray-100 p-8 shadow-lg ring-1 mb-5 
+//              flex flex-col h-[420px]" // <-- fixed equal height
+//               >
+//                 <div className="flex items-center gap-1.5 mb-4 text-amber-500">
+//                   {Array.from({ length: t.rating }).map((_, i) => (
+//                     <IconStarFilled
+//                       key={i}
+//                       size={18}
+//                       className="drop-shadow-[0_1px_0_rgba(255,255,255,0.4)]"
+//                     />
+//                   ))}
+//                 </div>
+
+//                 {/* Quote (fills space) */}
+//                 <p className="text-gray-700 leading-relaxed flex-grow overflow-hidden">
+//                   “{t.quote}”
+//                 </p>
+
+//                 {/* Person info (sticks to bottom) */}
+//                 <div className="mt-6 flex items-center gap-3">
+//                   <div
+//                     className="h-10 w-10 shrink-0 rounded-full bg-gradient-to-br 
+//                     from-emerald-500 to-teal-500 text-white 
+//                     grid place-items-center font-semibold"
+//                   >
+//                     {t.initials}
+//                   </div>
+//                   <div className="min-w-0">
+//                     <p className="text-sm font-semibold text-gray-900 truncate">
+//                       {t.name}
+//                     </p>
+//                     <p className="text-xs text-gray-500">{t.country}</p>
+//                   </div>
+//                   <span
+//                     className="ml-auto inline-flex items-center gap-1 rounded-full 
+//                     bg-emerald-50 px-2 py-1 text-[10px] font-medium 
+//                     text-emerald-700 ring-1 ring-emerald-200"
+//                   >
+//                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+//                     Verified
+//                   </span>
+//                 </div>
+//               </div>
+//             ))}
+//           </motion.div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
 "use client";
 
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { IconStarFilled } from "@tabler/icons-react";
+import Marquee from "react-fast-marquee";
 
 export default function Testimonials() {
   const testimonials = [
     {
       quote:
-        "WhatFlow transformed our customer communication. Order confirmations and updates are now instant and automated!",
-      name: "Sarah Johnson",
-      designation: "CEO, Trendy Threads",
-      src: "/Testimonial_1.avif",
+        "As the owner of Republic by Omar Farooq, a premium menswear brand, I’ve been using WhatFlow for WhatsApp automation on my Shopify store, and the results have been outstanding. Since integrating the app, I've seen a sales recovery rate of up to 70%. The automation has streamlined our customer communication, improved response times, and allowed us to engage with potential buyers in a much more personalized way. It’s been a game-changer for converting abandoned carts into actual sales. The user interface is intuitive and easy to set up, and the customer support team is always available and responsive. I highly recommend WhatFlow for any Shopify store looking to boost sales and enhance customer interaction through WhatsApp.",
+      name: "Republic by Omar Farooq",
+      country: "🇵🇰 Pakistan",
+      rating: 5,
+      initials: "OF",
+      highlight: true,
     },
     {
       quote:
-        "Abandoned cart recovery boosted our sales by 15%! The automation is seamless.",
-      name: "Michael Lee",
-      designation: "Founder, Home Essentials Co.",
-      src: "/Testimonial_2.avif",
+        "This app is a lifesaver for my business! The abandoned checkout retrieval has significantly boosted my conversions, and the automated order confirmation, fulfillment, and cancellation messages keep everything running smoothly. No more manual follow-ups--WhatFlow does it all for me! Easy to set up, reliable, and the support team is always helpful. If you run a Shopify store, this is a must-have!",
+      name: "SKNS.PK",
+      country: "🇺🇸 United States",
+      rating: 5,
+      initials: "SK",
     },
     {
       quote:
-        "We no longer miss customer updates. The system is fast, reliable, and very easy to use.",
-      name: "Emily Smith",
-      designation: "Marketing Head, Luxe Decor",
-      src: "/Testimonial_3.avif",
+        "Just started using this app, and honestly it's very easy to use, I was previously using another app which does same work but thought I'd try this one, and honestly Whatflow is way too easy to manage and thanks to Tags feature, catering the orders daily is pretty simple, easy and manageable now!",
+      name: "Dhaka Dash",
+      country: "🇧🇩 Bangladesh",
+      rating: 5,
+      initials: "DD",
     },
     {
       quote:
-        "We no longer miss customer updates. The system is fast, reliable, and very easy to use.",
-      name: "Emily Smith",
-      designation: "Marketing Head, Luxe Decor",
-      src: "/Testimonial_4.avif",
+        "A must-have app if you're serious about scaling your store. Manually confirming hundreds or thousands of orders daily is simply not feasible, and this app takes that burden off. Setup is quick, and support is responsive. Highly recommended for any store looking to streamline operations",
+      name: "Go To Cart",
+      country: "🇵🇰 Pakistan",
+      rating: 5,
+      initials: "GC",
     },
-    {
+     {
       quote:
-        "We no longer miss customer updates. The system is fast, reliable, and very easy to use.",
-      name: "Emily Smith",
-      designation: "Marketing Head, Luxe Decor",
-      src: "/Testimonial_5.avif",
+        "WhatFlow is a great tool for WhatsApp automation. It’s easy to use and works smoothly. The best part is their support team — very responsive, helpful, and always ready to guide you properly. Highly recommended for anyone looking to manage WhatsApp communication more efficiently.",
+      name: "BiBi Boutiques",
+      country: "🇵🇰 Pakistan",
+      rating: 5,
+      initials: "BB",
     },
   ];
 
-  const autoplay = true;
-  const [active, setActive] = useState(0);
-  const [rotations, setRotations] = useState<number[]>([]);
-
-  useEffect(() => {
-    setRotations(testimonials.map(() => Math.floor(Math.random() * 21) - 10));
-  }, []);
-
-  const handleNext = () => {
-    setActive((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const handlePrev = () => {
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const isActive = (index: number) => index === active;
-
-  useEffect(() => {
-    if (autoplay) {
-      const id = setInterval(handleNext, 5000);
-      return () => clearInterval(id);
-    }
-  }, [autoplay]);
-
   return (
     <div className="py-24 relative isolate overflow-hidden bg-gradient-to-br from-white via-teal-50 to-green-50">
-      {/* Animated Gradient Glow */}
-      {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_rgba(56,189,248,0.15),transparent_60%)] animate-pulse"></div> */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
-            TESTIMONIALS
+            💬 TESTIMONIALS
           </h2>
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             See how businesses grow with{" "}
@@ -91,105 +200,72 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="relative mt-16 grid grid-cols-1 gap-20 md:grid-cols-2">
-          {/* Left - Image Stack */}
-          <div>
-            <div className="relative h-80 w-full">
-              <AnimatePresence>
-                {rotations.length > 0 &&
-                  testimonials.map((testimonial, index) => (
-                    <motion.div
-                      key={testimonial.src}
-                      initial={{
-                        opacity: 0,
-                        scale: 0.9,
-                        z: -100,
-                        rotate: rotations[index],
-                      }}
-                      animate={{
-                        opacity: isActive(index) ? 1 : 0.7,
-                        scale: isActive(index) ? 1 : 0.95,
-                        z: isActive(index) ? 0 : -100,
-                        rotate: isActive(index) ? 0 : rotations[index],
-                        zIndex: isActive(index)
-                          ? 40
-                          : testimonials.length + 2 - index,
-                        y: isActive(index) ? [0, -80, 0] : 0,
-                      }}
-                      exit={{
-                        opacity: 0,
-                        scale: 0.9,
-                        z: 100,
-                        rotate: rotations[index],
-                      }}
-                      transition={{
-                        duration: 0.4,
-                        ease: "easeInOut",
-                      }}
-                      className="absolute inset-0 origin-bottom rounded-3xl shadow-xl ring-1 ring-black/5 overflow-hidden"
-                    >
-                      <Image
-                        src={testimonial.src}
-                        alt={testimonial.name}
-                        width={500}
-                        height={500}
-                        className="h-full w-full object-cover"
+        {/* Marquee Carousel */}
+        <div className="mt-16 overflow-hidden">
+          <Marquee
+            gradient={false}
+            speed={30}               // slightly slower = smoother
+            pauseOnHover
+            pauseOnClick
+            autoFill={false}
+            className="py-2"        // vertical breathing room
+          >
+            {testimonials.map((t, idx) => (
+              <div key={idx} className="mx-4"> {/* horizontal spacing between cards */}
+                <div
+                  className={[
+                    "w-[85vw] sm:min-w-[360px] max-w-sm flex-shrink-0 mb-7",
+                    "rounded-2xl p-6 sm:p-7 min-h-[320px] sm:h-[330px]",
+                    "bg-white/80 backdrop-blur-sm shadow-xl",
+                    "ring-1 ring-gray-200/70 hover:ring-emerald-200/70",
+                    "transition-all duration-400 hover:-translate-y-0.5",
+                    t.highlight
+                      ? "bg-gradient-to-br from-white via-white/85 to-emerald-50/70"
+                      : "bg-gradient-to-br from-white via-white/80 to-slate-50/60",
+                  ].join(" ")}
+                >
+                  {/* Subtle corner sheen */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -top-px -right-px h-20 w-20 rounded-tr-2xl bg-gradient-to-bl from-emerald-200/40 via-transparent to-transparent"
+                  />
+
+                  {/* Stars */}
+                  <div className="flex items-center gap-1.5 mb-4 text-amber-500">
+                    {Array.from({ length: t.rating }).map((_, i) => (
+                      <IconStarFilled
+                        key={i}
+                        size={18}
+                        className="drop-shadow-[0_1px_0_rgba(255,255,255,0.4)]"
                       />
-                    </motion.div>
-                  ))}
-              </AnimatePresence>
-            </div>
-          </div>
+                    ))}
+                  </div>
 
-          {/* Right - Text */}
-          <div className="flex flex-col justify-center rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-100">
-            <motion.div
-              key={active}
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-            >
-              <h3 className="text-2xl font-bold text-gray-900">
-                {testimonials[active].name}
-              </h3>
-              <p className="text-sm font-medium text-teal-600">
-                {testimonials[active].designation}
-              </p>
-              <motion.p className="mt-6 text-lg leading-relaxed text-gray-600">
-                {testimonials[active].quote.split(" ").map((word, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ filter: "blur(10px)", opacity: 0, y: 5 }}
-                    animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.25,
-                      ease: "easeInOut",
-                      delay: 0.02 * index,
-                    }}
-                    className="inline-block"
-                  >
-                    {word}&nbsp;
-                  </motion.span>
-                ))}
-              </motion.p>
-            </motion.div>
+                  {/* Quote */}
+                  <p className="text-gray-700 leading-relaxed flex-grow line-clamp-6">
+                    “{t.quote}”
+                  </p>
 
-            {/* Navigation */}
-            <div className="mt-8 flex gap-3">
-              <button
-                onClick={handlePrev}
-                className="group flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm transition-all hover:border-teal-500 hover:bg-teal-50 hover:text-teal-600"
-              >
-                <IconArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
-              </button>
-              <button
-                onClick={handleNext}
-                className="group flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm transition-all hover:border-teal-500 hover:bg-teal-50 hover:text-teal-600"
-              >
-                <IconArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </button>
-            </div>
-          </div>
+                  {/* Person info */}
+                  <div className="mt-6 flex items-center gap-3">
+                    <div className="h-10 w-10 shrink-0 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white grid place-items-center font-semibold">
+                      {t.initials}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-gray-900 truncate">
+                        {t.name}
+                      </p>
+                      <p className="text-xs text-gray-500">{t.country}</p>
+                    </div>
+                    <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-medium text-emerald-700 ring-1 ring-emerald-200">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      Verified
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Marquee>
         </div>
       </div>
     </div>
