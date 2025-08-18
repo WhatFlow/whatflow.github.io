@@ -11,9 +11,9 @@ export default function CTA() {
 
       <div className="relative px-6 py-24 sm:px-8 sm:py-32 lg:px-12 flex justify-center">
         <FadeInSection>
-          <div className="mx-auto max-w-3xl text-center rounded-2xl backdrop-blur-xl bg-white/10 shadow-2xl border border-white/20 p-10">
+          <div className="mx-auto max-w-3xl text-center rounded-2xl backdrop-blur-xl bg-white/10 shadow-2xl border border-white/20 sm:p-10 p-5">
             {/* Heading */}
-            <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl drop-shadow-md">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl drop-shadow-md">
               Transform your e-commerce business
               <br />
               with simple WhatsApp automation

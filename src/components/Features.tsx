@@ -277,7 +277,7 @@ export default function Features() {
 
         {/* Feature Grid */}
           <div className="mx-auto mt-16 max-w-2xl lg:mt-20 lg:max-w-none">
-        <FadeInSection>
+        {/* <FadeInSection> */}
             <dl className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
               {features.map((feature, i) => (
                 <div
@@ -314,7 +314,7 @@ export default function Features() {
                 </div>
               ))}
             </dl>
-        </FadeInSection>
+        {/* </FadeInSection> */}
           </div>
       </div>
     </section>
