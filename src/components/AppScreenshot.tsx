@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
+import FadeInSection from "./FadeIn";
 type FeatureCardProps = {
   icon: React.ReactNode;
   title: string;
@@ -153,61 +154,64 @@ export default function AppScreenshot() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Heading */}
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
-            💪🏻 Simple & Powerful
-          </span>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            See WhatFlow in Action
-          </h2>
-          <p className="mt-4 text-lg leading-7 text-gray-600">
-            Take control of your WhatsApp automation with an intuitive
-            dashboard. Connect your account, customize templates, and watch your
-            engagement soar.
-          </p>
-        </div>
-
-        {/* Screenshot Card */}
-        <div className="mt-16 relative flex justify-center">
-          <div className="relative z-10 rounded-2xl shadow-xl overflow-hidden max-w-5xl border border-gray-100 bg-white">
-            {/* Fake Browser Top Bar */}
-            <div className="bg-teal-600 h-10 w-full flex items-center px-4">
-              <div className="flex space-x-2">
-                <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                <div className="w-3 h-3 rounded-full bg-green-400"></div>
-              </div>
-            </div>
-            <Image
-              src="/app-screenshot.png"
-              alt="WhatFlow App Dashboard"
-              width={1200}
-              height={800}
-              className="w-full h-auto"
-            />
+        <FadeInSection>
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
+              💪🏻 Simple & Powerful
+            </span>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+              See WhatFlow in Action
+            </h2>
+            <p className="mt-4 text-lg leading-7 text-gray-600">
+              Take control of your WhatsApp automation with an intuitive
+              dashboard. Connect your account, customize templates, and watch
+              your engagement soar.
+            </p>
           </div>
-          {/* Glow Background */}
-          <div className="absolute -z-10 w-[100%] h-[100%] bg-gradient-to-r from-green-100/40 via-teal-100/40 to-green-50/40 blur-3xl rounded-3xl"></div>
-        </div>
 
-        {/* Feature Cards */}
-        <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-          {features.map((feature, idx) => (
-            <div
-              key={idx}
-              className={`
-      ${idx === features.length - 1 ? "sm:col-span-2 lg:col-span-1" : ""}
-    `}
-            >
-              <FeatureCard
-                icon={feature.icon}
-                title={feature.title}
-                text={feature.text}
-                index={idx}
+          {/* Screenshot Card */}
+          <div className="mt-16 relative flex justify-center">
+            <div className="relative z-10 rounded-2xl shadow-xl overflow-hidden max-w-5xl border border-gray-100 bg-white">
+              {/* Fake Browser Top Bar */}
+              <div className="bg-teal-600 h-10 w-full flex items-center px-4">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+              </div>
+              <Image
+                src="/app-screenshot.png"
+                alt="WhatFlow App Dashboard"
+                width={1200}
+                height={800}
+                className="w-full h-auto"
               />
             </div>
-          ))}
-        </div>
+            {/* Glow Background */}
+            <div className="absolute -z-10 w-[100%] h-[100%] bg-gradient-to-r from-green-100/40 via-teal-100/40 to-green-50/40 blur-3xl rounded-3xl"></div>
+          </div>
+        </FadeInSection>
+        <FadeInSection>
+          {/* Feature Cards */}
+          <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+            {features.map((feature, idx) => (
+              <div
+                key={idx}
+                className={`
+      ${idx === features.length - 1 ? "sm:col-span-2 lg:col-span-1" : ""}
+    `}
+              >
+                <FeatureCard
+                  icon={feature.icon}
+                  title={feature.title}
+                  text={feature.text}
+                  index={idx}
+                />
+              </div>
+            ))}
+          </div>
+        </FadeInSection>
       </div>
     </div>
   );

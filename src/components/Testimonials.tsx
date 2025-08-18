@@ -78,8 +78,8 @@
 //             {[...testimonials, ...testimonials].map((t, idx) => (
 //               <div
 //                 key={idx}
-//                 className="min-w-[350px] max-w-sm flex-shrink-0 rounded-2xl 
-//              bg-white ring-gray-100 p-8 shadow-lg ring-1 mb-5 
+//                 className="min-w-[350px] max-w-sm flex-shrink-0 rounded-2xl
+//              bg-white ring-gray-100 p-8 shadow-lg ring-1 mb-5
 //              flex flex-col h-[420px]" // <-- fixed equal height
 //               >
 //                 <div className="flex items-center gap-1.5 mb-4 text-amber-500">
@@ -100,8 +100,8 @@
 //                 {/* Person info (sticks to bottom) */}
 //                 <div className="mt-6 flex items-center gap-3">
 //                   <div
-//                     className="h-10 w-10 shrink-0 rounded-full bg-gradient-to-br 
-//                     from-emerald-500 to-teal-500 text-white 
+//                     className="h-10 w-10 shrink-0 rounded-full bg-gradient-to-br
+//                     from-emerald-500 to-teal-500 text-white
 //                     grid place-items-center font-semibold"
 //                   >
 //                     {t.initials}
@@ -113,8 +113,8 @@
 //                     <p className="text-xs text-gray-500">{t.country}</p>
 //                   </div>
 //                   <span
-//                     className="ml-auto inline-flex items-center gap-1 rounded-full 
-//                     bg-emerald-50 px-2 py-1 text-[10px] font-medium 
+//                     className="ml-auto inline-flex items-center gap-1 rounded-full
+//                     bg-emerald-50 px-2 py-1 text-[10px] font-medium
 //                     text-emerald-700 ring-1 ring-emerald-200"
 //                   >
 //                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
@@ -131,7 +131,7 @@
 // }
 
 "use client";
-
+import FadeInSection from "./FadeIn";
 import { IconStarFilled } from "@tabler/icons-react";
 import Marquee from "react-fast-marquee";
 
@@ -170,7 +170,7 @@ export default function Testimonials() {
       rating: 5,
       initials: "GC",
     },
-     {
+    {
       quote:
         "WhatFlow is a great tool for WhatsApp automation. It’s easy to use and works smoothly. The best part is their support team — very responsive, helpful, and always ready to guide you properly. Highly recommended for anyone looking to manage WhatsApp communication more efficiently.",
       name: "BiBi Boutiques",
@@ -184,89 +184,95 @@ export default function Testimonials() {
     <div className="py-24 relative isolate overflow-hidden bg-gradient-to-br from-white via-teal-50 to-green-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
-            💬 TESTIMONIALS
-          </h2>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            See how businesses grow with{" "}
-            <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
-              WhatsApp automation
-            </span>
-          </h2>
-          <p className="mt-3 text-gray-600">
-            Real stories from our customers about how automation made their work
-            easier, faster, and more profitable.
-          </p>
-        </div>
+        <FadeInSection>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
+              💬 TESTIMONIALS
+            </h2>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              See how businesses grow with{" "}
+              <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
+                WhatsApp automation
+              </span>
+            </h2>
+            <p className="mt-3 text-gray-600">
+              Real stories from our customers about how automation made their
+              work easier, faster, and more profitable.
+            </p>
+          </div>
+        </FadeInSection>
 
         {/* Marquee Carousel */}
-        <div className="mt-16 overflow-hidden">
-          <Marquee
-            gradient={false}
-            speed={30}               // slightly slower = smoother
-            pauseOnHover
-            pauseOnClick
-            autoFill={false}
-            className="py-2"        // vertical breathing room
-          >
-            {testimonials.map((t, idx) => (
-              <div key={idx} className="mx-4"> {/* horizontal spacing between cards */}
-                <div
-                  className={[
-                    "w-[85vw] sm:min-w-[360px] max-w-sm flex-shrink-0 mb-7",
-                    "rounded-2xl p-6 sm:p-7 min-h-[320px] sm:h-[330px]",
-                    "bg-white/80 backdrop-blur-sm shadow-xl",
-                    "ring-1 ring-gray-200/70 hover:ring-emerald-200/70",
-                    "transition-all duration-400 hover:-translate-y-0.5",
-                    t.highlight
-                      ? "bg-gradient-to-br from-white via-white/85 to-emerald-50/70"
-                      : "bg-gradient-to-br from-white via-white/80 to-slate-50/60",
-                  ].join(" ")}
-                >
-                  {/* Subtle corner sheen */}
+        <FadeInSection>
+          <div className="mt-16 overflow-hidden">
+            <Marquee
+              gradient={false}
+              speed={30} // slightly slower = smoother
+              pauseOnHover
+              pauseOnClick
+              autoFill={false}
+              className="py-2" // vertical breathing room
+            >
+              {testimonials.map((t, idx) => (
+                <div key={idx} className="mx-4">
+                  {" "}
+                  {/* horizontal spacing between cards */}
                   <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -top-px -right-px h-20 w-20 rounded-tr-2xl bg-gradient-to-bl from-emerald-200/40 via-transparent to-transparent"
-                  />
+                    className={[
+                      "w-[85vw] sm:min-w-[360px] max-w-sm flex-shrink-0 mb-7",
+                      "rounded-2xl p-6 sm:p-7 min-h-[320px] sm:h-[330px]",
+                      "bg-white/80 backdrop-blur-sm shadow-xl",
+                      "ring-1 ring-gray-200/70 hover:ring-emerald-200/70",
+                      "transition-all duration-400 hover:-translate-y-0.5",
+                      t.highlight
+                        ? "bg-gradient-to-br from-white via-white/85 to-emerald-50/70"
+                        : "bg-gradient-to-br from-white via-white/80 to-slate-50/60",
+                    ].join(" ")}
+                  >
+                    {/* Subtle corner sheen */}
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -top-px -right-px h-20 w-20 rounded-tr-2xl bg-gradient-to-bl from-emerald-200/40 via-transparent to-transparent"
+                    />
 
-                  {/* Stars */}
-                  <div className="flex items-center gap-1.5 mb-4 text-amber-500">
-                    {Array.from({ length: t.rating }).map((_, i) => (
-                      <IconStarFilled
-                        key={i}
-                        size={18}
-                        className="drop-shadow-[0_1px_0_rgba(255,255,255,0.4)]"
-                      />
-                    ))}
-                  </div>
-
-                  {/* Quote */}
-                  <p className="text-gray-700 leading-relaxed flex-grow line-clamp-6">
-                    “{t.quote}”
-                  </p>
-
-                  {/* Person info */}
-                  <div className="mt-6 flex items-center gap-3">
-                    <div className="h-10 w-10 shrink-0 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white grid place-items-center font-semibold">
-                      {t.initials}
+                    {/* Stars */}
+                    <div className="flex items-center gap-1.5 mb-4 text-amber-500">
+                      {Array.from({ length: t.rating }).map((_, i) => (
+                        <IconStarFilled
+                          key={i}
+                          size={18}
+                          className="drop-shadow-[0_1px_0_rgba(255,255,255,0.4)]"
+                        />
+                      ))}
                     </div>
-                    <div className="min-w-0">
-                      <p className="text-sm font-semibold text-gray-900 truncate">
-                        {t.name}
-                      </p>
-                      <p className="text-xs text-gray-500">{t.country}</p>
+
+                    {/* Quote */}
+                    <p className="text-gray-700 leading-relaxed flex-grow line-clamp-6">
+                      “{t.quote}”
+                    </p>
+
+                    {/* Person info */}
+                    <div className="mt-6 flex items-center gap-3">
+                      <div className="h-10 w-10 shrink-0 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white grid place-items-center font-semibold">
+                        {t.initials}
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold text-gray-900 truncate">
+                          {t.name}
+                        </p>
+                        <p className="text-xs text-gray-500">{t.country}</p>
+                      </div>
+                      <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-medium text-emerald-700 ring-1 ring-emerald-200">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                        Verified
+                      </span>
                     </div>
-                    <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-medium text-emerald-700 ring-1 ring-emerald-200">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                      Verified
-                    </span>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Marquee>
-        </div>
+              ))}
+            </Marquee>
+          </div>
+        </FadeInSection>
       </div>
     </div>
   );

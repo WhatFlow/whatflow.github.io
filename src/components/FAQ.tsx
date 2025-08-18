@@ -1,134 +1,8 @@
-// 'use client';
-
-// import { useState } from 'react';
-// import { motion, AnimatePresence } from 'framer-motion';
-
-// interface FAQItemProps {
-//   question: string;
-//   answer: string;
-// }
-
-// function FAQItem({ question, answer }: FAQItemProps) {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   return (
-//     <div className="rounded-2xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
-//       <button
-//         className="flex w-full items-center justify-between text-left"
-//         onClick={() => setIsOpen(!isOpen)}
-//       >
-//         <span className="text-lg font-semibold text-gray-900">{question}</span>
-//         <span className="ml-4 flex-shrink-0">
-//           {isOpen ? (
-//             <svg
-//               className="h-6 w-6 text-teal-500"
-//               fill="none"
-//               viewBox="0 0 24 24"
-//               stroke="currentColor"
-//             >
-//               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-//             </svg>
-//           ) : (
-//             <svg
-//               className="h-6 w-6 text-teal-500"
-//               fill="none"
-//               viewBox="0 0 24 24"
-//               stroke="currentColor"
-//             >
-//               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-//             </svg>
-//           )}
-//         </span>
-//       </button>
-
-//       <AnimatePresence>
-//         {isOpen && (
-//           <motion.div
-//             initial={{ opacity: 0, height: 0 }}
-//             animate={{ opacity: 1, height: "auto" }}
-//             exit={{ opacity: 0, height: 0 }}
-//             transition={{ duration: 0.3 }}
-//             className="overflow-hidden"
-//           >
-//             <p className="mt-4 text-base text-gray-600">{answer}</p>
-//           </motion.div>
-//         )}
-//       </AnimatePresence>
-//     </div>
-//   );
-// }
-
-// export default function FAQ() {
-//   const faqs = [
-//     {
-//       question: "How does WhatFlow's automation suite work?",
-//       answer: "WhatFlow uses WhatsApp's 'link a device' feature to securely connect to your WhatsApp account. Once connected, our platform automates communication throughout the customer journey, handling order confirmations, abandoned cart recovery, shipping updates, and order cancellations, all with customizable templates that maintain your brand voice."
-//     },
-//     {
-//       question: "Do I need a WhatsApp Business API account?",
-//       answer: "No, you don't need the WhatsApp Business API. WhatFlow works with regular WhatsApp accounts and takes a simpler approach. You just need to link your WhatsApp account through our secure setup process, similar to how you'd connect WhatsApp Web on your computer."
-//     },
-//     {
-//       question: "Is my WhatsApp data secure with WhatFlow?",
-//       answer: "Absolutely. Our browserless technology only interacts with WhatsApp to send your automated messages - we never access, read, or store your existing conversations, contacts, or media. Our connection is limited strictly to the automation features you enable, and you can disconnect anytime with a single click."
-//     },
-//     {
-//       question: "Can I customize the automated messages?",
-//       answer: "Yes! WhatFlow provides customizable templates for each automation type. You can personalize the content, add your brand voice, include dynamic product information, and tailor the messaging to match your communication style."
-//     },
-//     {
-//       question: "How does the abandoned cart recovery feature work?",
-//       answer: "When a customer abandons their cart, WhatFlow automatically sends a WhatsApp message after a set delay (which you can configure). The message reminds them about the items in their cart and provides a direct link to complete their purchase, significantly boosting conversion rates."
-//     },
-//     {
-//       question: "Will I be notified of customer responses?",
-//       answer: "Yes, any customer responses to automated messages will appear directly in your WhatsApp account where you can continue the conversation personally. This creates a seamless transition from automation to personal service when needed."
-//     },
-//     {
-//       question: "How does the pricing model work?",
-//       answer: "Our pricing is based on the number of messages sent per month across all automation types. Every plan includes our full suite of features - the only difference is the message volume. Plans automatically upgrade if you exceed your limit to ensure uninterrupted service."
-//     }
-//   ];
-
-//   return (
-//     <div id="faq" className="relative isolate overflow-hidden bg-gradient-to-br from-white via-teal-50 to-green-50 py-24 sm:py-32">
-//       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-//         <div className="mx-auto max-w-4xl">
-//           <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 text-center">
-//             Frequently Asked Questions
-//           </h2>
-//           <p className="mt-4 text-lg leading-7 text-gray-600 text-center mb-12">
-//             Common questions about WhatFlow's WhatsApp automation suite
-//           </p>
-
-//           <div className="grid gap-6 sm:grid-cols-1">
-//             {faqs.map((faq) => (
-//               <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
-//             ))}
-//           </div>
-
-//           <div className="mt-16 text-center">
-//             <p className="text-gray-600">
-//               Can't find the answer you're looking for?{' '}
-//               <a
-//                 href="mailto:support@whatflow.tech"
-//                 className="font-semibold text-teal-600 hover:text-teal-700 transition-colors"
-//               >
-//                 Contact our support team
-//               </a>
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 'use client';
 
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import FadeInSection from "./FadeIn";
 interface FAQItemProps {
   question: string;
   answer: string;
@@ -140,6 +14,7 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
+     <FadeInSection>
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -207,6 +82,7 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
         )}
       </AnimatePresence>
     </motion.div>
+    </FadeInSection>
   );
 }
 
@@ -255,6 +131,7 @@ export default function FAQ() {
       
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
+          <FadeInSection>
           <div className="mb-16 text-center">
            <span className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
             ❓FAQ
@@ -277,13 +154,17 @@ export default function FAQ() {
               </p>
             </motion.div>
           </div>
+          </FadeInSection>
 
           <div className="grid gap-6 sm:grid-cols-1">
             {faqs.map((faq, index) => (
+             
+                
               <FAQItem key={faq.question} question={faq.question} answer={faq.answer} index={index} />
+             
             ))}
           </div>
-
+<FadeInSection>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -305,6 +186,7 @@ export default function FAQ() {
               </a>
             </div>
           </motion.div>
+          </FadeInSection>
         </div>
       </div>
     </div>
