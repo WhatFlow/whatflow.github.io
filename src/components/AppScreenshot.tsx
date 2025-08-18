@@ -156,8 +156,9 @@ export default function AppScreenshot() {
         {/* Section Heading */}
         <FadeInSection>
           <div className="mx-auto max-w-3xl text-center">
+            
             <span className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
-              💪🏻 Simple & Powerful
+              💪🏻 SIMPLE & POWERFUL
             </span>
             <h2 className="mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
               See WhatFlow in Action

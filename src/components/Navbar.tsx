@@ -33,11 +33,7 @@ export default function Navbar() {
         aria-label="Global"
       >
         {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          className="flex lg:flex-1 items-center"
+        <div className="flex lg:flex-1 items-center"
         >
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
             <Image
@@ -49,7 +45,7 @@ export default function Navbar() {
               priority
             />
           </Link>
-        </motion.div>
+        </div>
 
         {/* Mobile Menu Button */}
         <div className="flex lg:hidden">
@@ -84,11 +80,7 @@ export default function Navbar() {
         </div>
 
         {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: -5 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="hidden lg:flex lg:flex-1 lg:justify-end"
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end"
         >
           <Link
             href="https://apps.shopify.com/whatflow"
@@ -98,7 +90,7 @@ export default function Navbar() {
           >
             Install Now
           </Link>
-        </motion.div>
+        </div>
       </nav>
 
       {/* Mobile Menu */}

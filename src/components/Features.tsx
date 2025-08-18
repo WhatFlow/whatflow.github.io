@@ -257,7 +257,7 @@ export default function Features() {
         <FadeInSection>
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
-              FEATURES
+              🎯 FEATURES
             </h2>
             <p className="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               Complete{" "}
@@ -276,8 +276,8 @@ export default function Features() {
         </FadeInSection>
 
         {/* Feature Grid */}
-        <FadeInSection>
           <div className="mx-auto mt-16 max-w-2xl lg:mt-20 lg:max-w-none">
+        <FadeInSection>
             <dl className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
               {features.map((feature, i) => (
                 <div
@@ -314,8 +314,8 @@ export default function Features() {
                 </div>
               ))}
             </dl>
-          </div>
         </FadeInSection>
+          </div>
       </div>
     </section>
   );
