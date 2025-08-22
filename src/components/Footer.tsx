@@ -266,17 +266,17 @@ export default function Footer() {
         {/* Links + Legal */}
         <div className="mt-10 flex flex-col items-center gap-4 border-t border-white/10 pt-6 md:flex-row md:justify-between">
           <nav className="flex flex-wrap justify-center gap-4 text-sm text-white/70">
-            <Link href="/pricing" className="hover:text-emerald-400 transition">
-              Pricing
+            <Link href="/resources" className="hover:text-emerald-400 transition">
+              Resources
+            </Link>
+            <Link href="/terms" className="hover:text-emerald-400 transition">
+              Terms of Service
             </Link>
             <Link
-              href="/features"
+              href="/privacy-policy"
               className="hover:text-emerald-400 transition"
             >
-              Features
-            </Link>
-            <Link href="/contact" className="hover:text-emerald-400 transition">
-              Contact
+              Privacy Policy
             </Link>
           </nav>
           <p className="text-xs text-white/60">

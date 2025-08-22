@@ -3,7 +3,7 @@ import FadeInSection from "./FadeIn";
 import { IconStarFilled } from "@tabler/icons-react";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
-
+import { Quote } from "lucide-react";
 export default function Testimonials() {
   const testimonials = [
     {
@@ -55,9 +55,9 @@ export default function Testimonials() {
         {/* Section Heading */}
         <FadeInSection>
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
-              💬 TESTIMONIALS
-            </h2>
+            <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50/90 ring-1 ring-emerald-200 px-4 py-1 text-sm font-medium text-emerald-700 shadow-sm backdrop-blur">
+              <span className="text-base">💬</span> TESTIMONIALS
+            </span>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               See how businesses grow with{" "}
               <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
@@ -88,7 +88,7 @@ export default function Testimonials() {
                   {/* horizontal spacing between cards */}
                   <div
                     className={[
-                      "w-[85vw] sm:min-w-[360px] max-w-sm flex-shrink-0 mb-7",
+                      "w-[85vw] sm:min-w-[360px] max-w-sm flex-shrink-0 mb-7 mt-4",
                       "rounded-2xl p-6 sm:p-7 min-h-[320px] sm:h-[330px]",
                       "bg-white/80 backdrop-blur-sm shadow-xl",
                       "ring-1 ring-gray-200/70 hover:ring-emerald-200/70",
@@ -98,6 +98,11 @@ export default function Testimonials() {
                         : "bg-gradient-to-br from-white via-white/80 to-slate-50/60",
                     ].join(" ")}
                   >
+                    <div className="absolute -top-4 left-7">
+                      <div className="bg-emerald-500 rounded-full p-2">
+                        <Quote className="w-4 h-4 text-white" />
+                      </div>
+                    </div>
                     {/* Subtle corner sheen */}
                     <div
                       aria-hidden="true"

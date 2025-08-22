@@ -17,7 +17,12 @@ export default function Hero() {
           </div>
 
           <h1 className="mt-10 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-[53px] lg:text-5xl xl:text-[53px]">
-            Complete <span className="text-teal-600 drop-shadow-sm">WhatsApp</span> Automation Suite
+            Complete {""}<span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
+                WhatsApp 
+              </span> {""}
+              <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
+                Automation
+              </span> Suite
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-gray-600">

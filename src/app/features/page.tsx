@@ -1,7 +1,7 @@
 'use client';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Features from '@/components/Features';
+import FeatureDetails from '@/components/FeatureDetails';
 import LoadingBar from "react-top-loading-bar";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -31,7 +31,7 @@ export default function ResourcesPage() {
         onLoaderFinished={() => setProgress(0)}
       />
         <Navbar />
-        <Features />
+        <FeatureDetails />
         <Footer />
    
     </main>
