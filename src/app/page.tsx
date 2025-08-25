@@ -7,7 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
-import AppScreenshot from "@/components/AppScreenshot";
+import AppScreenshot from "@/components/HallMarks";
 import LoadingBar from "react-top-loading-bar";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";

@@ -100,7 +100,7 @@ const features = [
   },
 ];
 
-export default function AppScreenshot() {
+export default function HallMarks() {
   return (
     <div className="py-20 bg-gradient-to-br from-white via-teal-50 to-green-50 relative">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
