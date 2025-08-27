@@ -256,9 +256,10 @@ export default function FeatureDetails() {
         {/* Header */}
         <FadeInSection>
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="inline-flex items-center rounded-full bg-green-100 px-4 py-1 text-sm font-medium text-green-800 shadow-sm">
-              🎯 FEATURES
-            </h2>
+            <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50/90 ring-1 ring-emerald-200 px-4 py-1 text-sm font-medium text-emerald-700 shadow-sm backdrop-blur">
+              <span className="text-base">🎯</span> FEATURES
+            </span>
+
             <p className="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               Complete{" "}
               <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
@@ -276,46 +277,46 @@ export default function FeatureDetails() {
         </FadeInSection>
 
         {/* Feature Grid */}
-          <div className="mx-auto mt-16 max-w-2xl lg:mt-20 lg:max-w-none">
-        {/* <FadeInSection> */}
-            <dl className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
-              {features.map((feature, i) => (
-                <div
-                  key={i}
-                  className="relative rounded-2xl bg-white p-8 group transition-all duration-300 last:lg:col-span-2 last:lg:mx-auto last:lg:max-w-xl"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)",
-                    boxShadow:
-                      "0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)",
-                  }}
-                >
-                  {/* Gradient border effect */}
-                  <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-200/30 via-teal-100/20 to-teal-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-green-400 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                  </div>
-
-                  {/* Icon with enhanced style */}
-                  <div className="absolute border-[0.5px] border-teal-500 -top-6 left-8 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-50 via-teal-100 to-emerald-200 shadow-inner">
-                    <div className="text-white">{feature.icon}</div>
-                  </div>
-
-                  {/* Content with better spacing */}
-                  <dt className="mt-10 text-xl font-bold text-gray-900 tracking-tight">
-                    {feature.name}
-                  </dt>
-                  <dd className="mt-3 text-base leading-7 text-gray-600">
-                    {feature.description}
-                  </dd>
-
-                  {/* Subtle corner accent */}
-                  <div className="absolute bottom-2 right-2 w-10 h-10 rounded-full bg-gradient-to-br from-green-100 to-teal-50 opacity-30"></div>
+        <div className="mx-auto mt-16 max-w-2xl lg:mt-20 lg:max-w-none">
+          {/* <FadeInSection> */}
+          <dl className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
+            {features.map((feature, i) => (
+              <div
+                key={i}
+                className="relative rounded-2xl bg-white p-8 group transition-all duration-300 last:lg:col-span-2 last:lg:mx-auto last:lg:max-w-xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)",
+                  boxShadow:
+                    "0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)",
+                }}
+              >
+                {/* Gradient border effect */}
+                <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                  {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-200/30 via-teal-100/20 to-teal-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
+                  <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-green-400 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </div>
-              ))}
-            </dl>
-        {/* </FadeInSection> */}
-          </div>
+
+                {/* Icon with enhanced style */}
+                <div className="absolute border-[0.5px] border-teal-500 -top-6 left-8 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-50 via-teal-100 to-emerald-200 shadow-inner">
+                  <div className="text-white">{feature.icon}</div>
+                </div>
+
+                {/* Content with better spacing */}
+                <dt className="mt-10 text-xl font-bold text-gray-900 tracking-tight">
+                  {feature.name}
+                </dt>
+                <dd className="mt-3 text-base leading-7 text-gray-600">
+                  {feature.description}
+                </dd>
+
+                {/* Subtle corner accent */}
+                <div className="absolute bottom-2 right-2 w-10 h-10 rounded-full bg-gradient-to-br from-green-100 to-teal-50 opacity-30"></div>
+              </div>
+            ))}
+          </dl>
+          {/* </FadeInSection> */}
+        </div>
       </div>
     </section>
   );

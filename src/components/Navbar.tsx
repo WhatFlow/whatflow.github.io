@@ -19,7 +19,7 @@ export default function Navbar() {
 
   const linkClasses = (path: string) =>
     pathname === path
-      ? "relative text-green-600 font-semibold after:absolute after:left-0 after:bottom-[-4px] after:h-[3px] after:w-full after:bg-gradient-to-r after:from-green-500 after:to-emerald-400 after:rounded-full after:transition-all"
+      ? "relative text-green-600 text-lg font-semibold after:absolute after:left-0 after:bottom-[-4px] after:h-[3px] after:w-full after:bg-gradient-to-r after:from-green-500 after:to-emerald-400 after:rounded-full after:transition-all"
       : "relative text-gray-800 text-lg font-semibold hover:text-green-600 transition duration-300 after:absolute after:left-1/2 after:bottom-[-4px] after:h-[3px] after:w-0 hover:after:w-full hover:after:left-0 after:bg-gradient-to-r after:from-green-500 after:to-emerald-400 after:rounded-full after:transition-all";
 
   return (

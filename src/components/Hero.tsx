@@ -11,7 +11,7 @@ export default function Hero() {
         {/* Text Section */}
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:pt-8">
           <div className="mt-16 sm:mt-24 lg:mt-8">
-            <a href="#" className="inline-flex items-center space-x-3 rounded-full bg-teal-100 px-4 py-1 text-sm font-semibold text-teal-800 shadow-sm hover:bg-teal-200 transition">
+            <a href="#" className="inline-flex items-center gap-2 rounded-full bg-emerald-50/90 ring-1 ring-emerald-200 px-4 py-1 text-sm font-medium text-emerald-700 shadow-sm backdrop-blur">
               <span>🚀 Just launched v2.0</span>
             </a>
           </div>
