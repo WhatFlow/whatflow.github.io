@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import GuideCarousel from "./GuideCarousel";
 import AbandonCarousel from "./AbandonCarousel";
+import FulfillCarousel from "./FulfillCarousel";
 import {
   Tooltip,
   TooltipContent,
@@ -129,9 +130,10 @@ export default function Resources() {
                             <Image
                               src="/demo-store.png"
                               alt="Demo Store"
-                              width={500}
-                              height={500}
-                              className="object-cover rounded-xl shadow-md"
+                              width={0} // allows Next.js to calculate from intrinsic size
+                              height={0}
+                              sizes="100vw" // makes it responsive
+                              className="w-full h-auto rounded-xl shadow-md object-contain"
                             />
                           </div>
                         </TooltipTrigger>
@@ -257,8 +259,9 @@ export default function Resources() {
                                   <Image
                                     src={img.src}
                                     alt={img.alt}
-                                    width={500}
-                                    height={500}
+                                   width={0} // allows Next.js to calculate from intrinsic size
+                              height={0}
+                              sizes="100vw" // makes it responsive
                                     className="w-full h-auto object-cover rounded-xl shadow-md"
                                   />
                                 </div>
@@ -352,86 +355,61 @@ export default function Resources() {
 
               {activeTab === "fulfillment" && (
                 <div className="bg-white/90 p-8 sm:p-10 rounded-2xl shadow-xl border border-slate-100/80 backdrop-blur-sm">
-                  <div className="flex flex-col md:flex-row gap-8">
-                    <div className="md:w-1/3">
+                  <div className="flex flex-col md:flex-row gap-10">
+                    {/* Left Side - Images */}
+                    <div className="md:w-2/5">
                       <div className="relative rounded-xl overflow-hidden group">
-                        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-emerald-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <img
-                          src="/images/order-fulfillment.png"
-                          alt="Order Fulfillment"
-                          className="w-full h-auto object-cover rounded-xl shadow-md transform group-hover:scale-105 transition-transform duration-300"
-                        />
+                        <div className="flex flex-col gap-8 p-4">
+                          {[
+                            {
+                              src: "order-fulfill1.png",
+                              alt: "Order Fulfillment",
+                            },
+                            {
+                              src: "order-fulfill2.png",
+                              alt: "Order Fulfillment",
+                            },
+                            {
+                              src: "order-fulfill3.png",
+                              alt: "Order Fulfillment",
+                            },
+                          ].map((img, i) => (
+                            <Tooltip key={i}>
+                              <TooltipTrigger asChild>
+                                <div
+                                  className="transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+                                  onClick={() => setFullscreenImage(img.src)}
+                                  tabIndex={0}
+                                >
+                                  <Image
+                                    src={img.src}
+                                    alt={img.alt}
+                                    width={500}
+                                    height={220}
+                                    className="w-full h-auto object-cover rounded-xl shadow-md"
+                                  />
+                                </div>
+                              </TooltipTrigger>
+                              <TooltipContent>Click to enlarge</TooltipContent>
+                            </Tooltip>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    <div className="md:w-2/3">
-                      <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-700 mb-4">
+
+                    {/* Right Side - Carousel Steps */}
+                    <div className="md:w-3/5 flex flex-col">
+                      <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-700 mb-6">
                         Order Fulfillment Notifications
                       </h3>
-                      <p className="text-slate-600 leading-relaxed mb-6 text-lg">
+                      <p className="text-slate-600 leading-relaxed mb-3 text-lg">
                         Keep customers informed about their order status with
                         real-time WhatsApp notifications throughout the
                         fulfillment process.
                       </p>
-                      <div className="space-y-4">
-                        {[
-                          {
-                            stage: "Processing",
-                            description:
-                              "Notify customers when their order is being prepared",
-                          },
-                          {
-                            stage: "Shipped",
-                            description:
-                              "Send tracking information and estimated delivery dates",
-                          },
-                          {
-                            stage: "Out for Delivery",
-                            description:
-                              "Alert customers when their package is out for delivery",
-                          },
-                          {
-                            stage: "Delivered",
-                            description:
-                              "Confirm delivery and request feedback on their purchase",
-                          },
-                        ].map((stage, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <div className="relative">
-                              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center text-white shadow-md">
-                                {index + 1}
-                              </div>
-                              {index < 3 && (
-                                <div className="absolute top-8 left-1/2 w-0.5 h-10 bg-gradient-to-b from-teal-500 to-transparent transform -translate-x-1/2"></div>
-                              )}
-                            </div>
-                            <div className="flex-1 pt-1">
-                              <h4 className="font-semibold text-slate-800">
-                                {stage.stage}
-                              </h4>
-                              <p className="text-slate-600 text-sm">
-                                {stage.description}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      <button className="mt-8 inline-flex items-center px-6 py-3 rounded-lg text-sm font-medium bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-500/20 hover:shadow-xl hover:shadow-teal-500/30 transition-all duration-300 transform hover:-translate-y-1">
-                        Configure Notifications
-                        <svg
-                          className="ml-2 w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </button>
+
+                      {/* Carousel */}
+                      <FulfillCarousel />
                     </div>
                   </div>
                 </div>
