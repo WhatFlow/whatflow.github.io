@@ -3,7 +3,7 @@ import type { JSX } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function GuideCarousel() {
+export default function AbandonCarousel() {
   type Step = {
     id: string;
     text: string;

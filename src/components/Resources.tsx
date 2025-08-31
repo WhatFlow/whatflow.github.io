@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import GuideCarousel from "./GuideCarousel";
 import AbandonCarousel from "./AbandonCarousel";
 import FulfillCarousel from "./FulfillCarousel";
+import ConfirmCarousel from "./ConfirmCarousel";
+import FeedbackCarousel from "./FeebackCarousel";
 import {
   Tooltip,
   TooltipContent,
@@ -88,7 +90,7 @@ export default function Resources() {
                   {activeTab === tab.id && (
                     <motion.div
                       layoutId="activeTabBackground"
-                      className="absolute inset-0 bg-gradient-to-r from-teal-500 to-emerald-600 rounded-lg"
+                      className="absolute inset-0 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg"
                       transition={{
                         type: "spring",
                         stiffness: 300,
@@ -419,64 +421,62 @@ export default function Resources() {
 
               {activeTab === "confirmation" && (
                 <div className="bg-white/90 p-8 sm:p-10 rounded-2xl shadow-xl border border-slate-100/80 backdrop-blur-sm">
-                  <div className="flex flex-col md:flex-row gap-8">
-                    <div className="md:w-1/3">
+                  <div className="flex flex-col md:flex-row gap-10">
+                    {/* Left Side - Images */}
+                    <div className="md:w-2/5">
                       <div className="relative rounded-xl overflow-hidden group">
-                        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-emerald-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <img
-                          src="/images/order-confirmation.png"
-                          alt="Order Confirmation"
-                          className="w-full h-auto object-cover rounded-xl shadow-md transform group-hover:scale-105 transition-transform duration-300"
-                        />
+                        <div className="flex flex-col gap-8 p-4">
+                          {[
+                            {
+                              src: "order-confirmation1.png",
+                              alt: "Order Confirmation",
+                            },
+                            {
+                              src: "order-confirmation2.png",
+                              alt: "Order Confirmation",
+                            },
+                            {
+                              src: "order-confirmation3.png",
+                              alt: "Order Confirmation",
+                            },
+                          ].map((img, i) => (
+                            <Tooltip key={i}>
+                              <TooltipTrigger asChild>
+                                <div
+                                  className="transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+                                  onClick={() => setFullscreenImage(img.src)}
+                                  tabIndex={0}
+                                >
+                                  <Image
+                                    src={img.src}
+                                    alt={img.alt}
+                                    width={0}
+                                    height={0}
+                                    sizes="100vw"
+                                    className="w-full h-auto object-cover rounded-xl shadow-md"
+                                  />
+                                </div>
+                              </TooltipTrigger>
+                              <TooltipContent>Click to enlarge</TooltipContent>
+                            </Tooltip>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    <div className="md:w-2/3">
-                      <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-700 mb-4">
-                        Order Confirmation Setup
+
+                    {/* Right Side - Carousel Steps */}
+                    <div className="md:w-3/5 flex flex-col">
+                      <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-700 mb-6">
+                         Order Confirmation Setup
                       </h3>
-                      <p className="text-slate-600 leading-relaxed mb-6 text-lg">
-                        Send instant, personalized order confirmations that
+                      <p className="text-slate-600 leading-relaxed mb-3 text-lg">
+                       Send instant, personalized order confirmations that
                         improve customer satisfaction and reduce support
                         inquiries.
                       </p>
-                      <div className="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-6">
-                        <h4 className="font-semibold text-slate-800 mb-3">
-                          Sample Message Template
-                        </h4>
-                        <div className="bg-white p-4 rounded-lg border border-slate-200 text-slate-700 text-sm">
-                          <p className="mb-2">
-                            <span className="font-bold">
-                              Thank you for your order, [Customer Name]! 🎉
-                            </span>
-                          </p>
-                          <p className="mb-2">
-                            Your order #[Order Number] has been received and is
-                            being processed.
-                          </p>
-                          <p className="mb-2">
-                            <span className="font-semibold">
-                              Order Summary:
-                            </span>
-                            <br />
-                            [Product List with Prices]
-                            <br />
-                            Subtotal: [Subtotal]
-                            <br />
-                            Shipping: [Shipping Cost]
-                            <br />
-                            Total: [Order Total]
-                          </p>
-                          <p>Track your order status here: [Tracking Link]</p>
-                        </div>
-                      </div>
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="flex-1 inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-medium bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-500/20 hover:shadow-xl hover:shadow-teal-500/30 transition-all duration-300 transform hover:-translate-y-1">
-                          Customize Template
-                        </button>
-                        <button className="flex-1 inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-medium border border-teal-500 text-teal-600 hover:bg-teal-50 transition-all duration-300">
-                          Preview Message
-                        </button>
-                      </div>
+
+                      {/* Carousel */}
+                      <ConfirmCarousel />
                     </div>
                   </div>
                 </div>
@@ -484,128 +484,43 @@ export default function Resources() {
 
               {activeTab === "feedback" && (
                 <div className="bg-white/90 p-8 sm:p-10 rounded-2xl shadow-xl border border-slate-100/80 backdrop-blur-sm">
-                  <div className="flex flex-col md:flex-row gap-8">
-                    <div className="md:w-1/3">
-                      <div className="relative rounded-xl overflow-hidden group">
-                        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-emerald-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <img
-                          src="/images/feedback.png"
-                          alt="Customer Feedback"
-                          className="w-full h-auto object-cover rounded-xl shadow-md transform group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
+                  <div className="flex flex-col md:flex-row gap-10">
+                    {/* Left Side - Images */}
+                    <div className="md:w-2/5">
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div
+                            className="relative rounded-xl overflow-hidden border border-slate-200/80 transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+                            onClick={() =>
+                              setFullscreenImage("/image.png")
+                            }
+                          >
+                            <Image
+                              src="/image.png"
+                              alt="Feedback"
+                              width={0} // allows Next.js to calculate from intrinsic size
+                              height={0}
+                              sizes="100vw" // makes it responsive
+                              className="w-full h-auto rounded-xl shadow-md object-contain"
+                            />
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent>Click to enlarge</TooltipContent>
+                      </Tooltip>
                     </div>
-                    <div className="md:w-2/3">
-                      <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-700 mb-4">
-                        Customer Feedback Collection
+
+                    {/* Right Side - Content */}
+                    <div className="md:w-3/5 flex flex-col">
+                      <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-700 mb-6">
+                         Customer Feedback Collection
                       </h3>
-                      <p className="text-slate-600 leading-relaxed mb-6 text-lg">
-                        Automatically collect valuable feedback and reviews to
+                      <p className="text-slate-600 leading-relaxed mb-3 text-lg">
+                       Automatically collect valuable feedback and reviews to
                         improve your products and customer experience.
                       </p>
-                      <div className="space-y-5">
-                        <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
-                          <div className="flex items-center gap-3 mb-2">
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center text-white shadow-md">
-                              <svg
-                                className="w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                              </svg>
-                            </div>
-                            <h4 className="font-semibold text-slate-800">
-                              Automated Timing
-                            </h4>
-                          </div>
-                          <p className="text-slate-600 text-sm">
-                            Schedule feedback requests to be sent at the optimal
-                            time after delivery, increasing response rates.
-                          </p>
-                        </div>
 
-                        <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
-                          <div className="flex items-center gap-3 mb-2">
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center text-white shadow-md">
-                              <svg
-                                className="w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M5 13l4 4L19 7"
-                                />
-                              </svg>
-                            </div>
-                            <h4 className="font-semibold text-slate-800">
-                              Interactive Surveys
-                            </h4>
-                          </div>
-                          <p className="text-slate-600 text-sm">
-                            Create simple surveys customers can complete
-                            directly in WhatsApp without leaving the app.
-                          </p>
-                        </div>
-
-                        <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
-                          <div className="flex items-center gap-3 mb-2">
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center text-white shadow-md">
-                              <svg
-                                className="w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                                />
-                              </svg>
-                            </div>
-                            <h4 className="font-semibold text-slate-800">
-                              Feedback Analytics
-                            </h4>
-                          </div>
-                          <p className="text-slate-600 text-sm">
-                            Track customer satisfaction over time with detailed
-                            analytics and reporting tools.
-                          </p>
-                        </div>
-                      </div>
-
-                      <button className="mt-8 inline-flex items-center px-6 py-3 rounded-lg text-sm font-medium bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-500/20 hover:shadow-xl hover:shadow-teal-500/30 transition-all duration-300 transform hover:-translate-y-1">
-                        Create Feedback Campaign
-                        <svg
-                          className="ml-2 w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </button>
+                      {/* Carousel */}
+                      <FeedbackCarousel />
                     </div>
                   </div>
                 </div>

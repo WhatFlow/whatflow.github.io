@@ -3,7 +3,7 @@ import type { JSX } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function FulfillCarousel() {
+export default function ConfirmCarousel() {
   type Step = {
     id: string;
     text: string;
@@ -25,20 +25,20 @@ export default function FulfillCarousel() {
       steps: [
         {
           id: "1",
-          text: 'Navigate to the "Order Fulfillment" tab in your WhatFlow dashboard',
+          text: 'Navigate to the "Order Confirmation" tab in your WhatFlow dashboard',
         },
         { id: "2", text: "Enable the feature by toggling the switch" },
         {
           id: "3",
-          text: "Configure which fulfillment events trigger notifications (shipping, delivery, etc.)",
+          text: "Customize your order confirmation message template",
         },
         {
           id: "4",
-          text: "Customize message templates for each event type",
+          text: "Configure which order details to include",
         },
         {
           id: "5",
-          text: "Set up tracking link integration if applicable",
+          text: "Set up any follow-up messages if desired",
         },
         { id: "6", text: "Save your settings and activate" },
       ],
@@ -46,77 +46,63 @@ export default function FulfillCarousel() {
     {
       heading: "Available Notification Events",
       customContent: (
-        <div className="space-y-4">
-          {[
-            {
-              stage: "Order Shipped",
-              description:
-                "Send tracking information and estimated delivery dates",
-            },
-            {
-              stage: "Out for Delivery",
-              description:
-                "Alert customers when their package is out for delivery",
-            },
-            {
-              stage: "Delivered",
-              description:
-                "Confirm delivery and request feedback on their purchase",
-            },
-            {
-              stage: "Shipping Delay",
-              description: "Alerts customers of potential delays",
-            },
-            {
-              stage: "Delivery Exception",
-              description: "Notifies of delivery problems requiring attention",
-            },
-          ].map((stage, index) => (
-            <div key={index} className="flex items-start gap-3">
-              <div className="relative">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center text-white shadow-md">
-                  {index + 1}
-                </div>
-                {index < 4 && (
-                  <div className="absolute top-8 left-1/2 w-0.5 h-10 bg-gradient-to-b from-teal-500 to-transparent transform -translate-x-1/2"></div>
-                )}
-              </div>
-              <div className="flex-1 pt-1">
-                <h4 className="font-semibold text-slate-800">{stage.stage}</h4>
-                <p className="text-slate-600 text-sm">{stage.description}</p>
-              </div>
-            </div>
-          ))}
+        <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-6">
+          <h4 className="font-semibold text-slate-800 mb-3">
+            Sample Message Template
+          </h4>
+          <div className="bg-white p-4 rounded-lg border border-slate-200 text-slate-700 text-sm">
+            <p className="mb-2">
+              Thank you for your order from {`{shopName}`}. This is a
+              confirmation message.
+            </p>
+
+            <p className="mb-2 font-semibold">Order Details:</p>
+
+            <p className="mb-2">
+              Order ID: {`{orderId}`} <br />
+              Order Number: {`{orderNumber}`}
+            </p>
+
+            <p className="mb-2">
+              <span className="font-semibold">Items:</span> {`{itemsXquantity}`}{" "}
+              <br />
+              <span className="font-semibold">Subtotal:</span> {`{subtotal}`}
+            </p>
+
+            <p className="mb-2">
+              <span className="font-semibold">Address:</span> {`{address}`}{" "}
+              <br />
+              <span className="font-semibold">City:</span> {`{city}`}
+            </p>
+
+            <p>Please confirm your order.</p>
+          </div>
         </div>
       ),
     },
 
     {
-      heading: "Message Customization",
+      heading: "Best Practices",
       steps: [
         {
           id: "1",
-          text: "{{customer_name}} - Inserts the customer's name",
+          text: "Send confirmation messages immediately after purchase",
         },
         {
           id: "2",
-          text: "{{order_number}} - Displays the order reference number",
+          text: "Include essential order details but keep messages concise",
         },
         {
           id: "3",
-          text: "{{tracking_number}} - Shows the shipment tracking number",
+          text: "Provide a link to view complete order information",
         },
         {
           id: "4",
-          text: "{{tracking_link}} - Provides a clickable tracking link",
+          text: "Thank customers for their purchase",
         },
         {
           id: "5",
-          text: "{{carrier_name}} - Displays the shipping carrier",
-        },
-        {
-          id: "6",
-          text: "{{estimated_delivery}} - Shows estimated delivery date range",
+          text: "Set expectations for next steps (fulfillment timelines, etc.)",
         },
       ],
     },
