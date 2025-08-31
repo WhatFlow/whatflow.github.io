@@ -60,7 +60,6 @@ export default function GuideCarousel() {
                 Hi <span className="font-semibold">{`{billingFirstName}`}</span>
                 , you left items in your cart at{" "}
                 <span className="font-semibold">{`{shopName}`}</span>!
-               
                 <br />
                 Complete your purchase here:{" "}
                 <span className="font-semibold">{`{recoveryLink}`}</span>!

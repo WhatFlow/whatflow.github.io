@@ -1,22 +1,21 @@
-
 import { useState } from "react";
 
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function  GuideCarousel() {
-    type Step = {
-  id: string;
-  text: string;
-  link?: {
-    url: string;
-    label: string;
+export default function GuideCarousel() {
+  type Step = {
+    id: string;
+    text: string;
+    link?: {
+      url: string;
+      label: string;
+    };
   };
-};
-    type Section = {
-  heading: string;
-  steps: Step[];
-};
+  type Section = {
+    heading: string;
+    steps: Step[];
+  };
   const sections: Section[] = [
     {
       heading: "Installation Steps",
@@ -35,7 +34,7 @@ export default function  GuideCarousel() {
         },
         {
           id: "3",
-          text: 'Once installed, you’ll be redirected to the WhatFlow dashboard',
+          text: "Once installed, you’ll be redirected to the WhatFlow dashboard",
         },
         {
           id: "4",

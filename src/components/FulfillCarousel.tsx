@@ -48,7 +48,6 @@ export default function GuideCarousel() {
       customContent: (
         <div className="space-y-4">
           {[
-          
             {
               stage: "Order Shipped",
               description:
@@ -66,13 +65,11 @@ export default function GuideCarousel() {
             },
             {
               stage: "Shipping Delay",
-              description:
-                "Alerts customers of potential delays",
+              description: "Alerts customers of potential delays",
             },
             {
               stage: "Delivery Exception",
-              description:
-                "Notifies of delivery problems requiring attention",
+              description: "Notifies of delivery problems requiring attention",
             },
           ].map((stage, index) => (
             <div key={index} className="flex items-start gap-3">
@@ -96,7 +93,7 @@ export default function GuideCarousel() {
 
     {
       heading: "Message Customization",
-     steps: [
+      steps: [
         {
           id: "1",
           text: "{{customer_name}} - Inserts the customer's name",

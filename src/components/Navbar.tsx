@@ -25,7 +25,9 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all ${
-        scrolled ? "bg-background/60 backdrop-blur-lg shadow-md" : "bg-white shadow-sm"
+        scrolled
+          ? "bg-background/60 backdrop-blur-lg shadow-md"
+          : "bg-white shadow-sm"
       }`}
     >
       <nav
@@ -33,8 +35,7 @@ export default function Navbar() {
         aria-label="Global"
       >
         {/* Logo */}
-        <div className="flex lg:flex-1 items-center"
-        >
+        <div className="flex lg:flex-1 items-center">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
             <Image
               src="/logo.png"
@@ -80,8 +81,7 @@ export default function Navbar() {
         </div>
 
         {/* CTA Button */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end"
-        >
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
             href="https://apps.shopify.com/whatflow"
             target="_blank"

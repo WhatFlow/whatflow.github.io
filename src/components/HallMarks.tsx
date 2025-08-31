@@ -113,7 +113,7 @@ export default function HallMarks() {
 
             <h2 className="mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
               Everything you need to {""}
-               <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
                 Automate
               </span>
             </h2>

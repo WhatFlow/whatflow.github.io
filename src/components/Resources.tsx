@@ -259,9 +259,9 @@ export default function Resources() {
                                   <Image
                                     src={img.src}
                                     alt={img.alt}
-                                   width={0} // allows Next.js to calculate from intrinsic size
-                              height={0}
-                              sizes="100vw" // makes it responsive
+                                    width={0} // allows Next.js to calculate from intrinsic size
+                                    height={0}
+                                    sizes="100vw" // makes it responsive
                                     className="w-full h-auto object-cover rounded-xl shadow-md"
                                   />
                                 </div>
@@ -322,8 +322,9 @@ export default function Resources() {
                                   <Image
                                     src={img.src}
                                     alt={img.alt}
-                                    width={500}
-                                    height={500}
+                                    width={0}
+                                    height={0}
+                                    sizes="100vw"
                                     className="w-full h-auto object-cover rounded-xl shadow-md"
                                   />
                                 </div>
@@ -384,8 +385,9 @@ export default function Resources() {
                                   <Image
                                     src={img.src}
                                     alt={img.alt}
-                                    width={500}
-                                    height={220}
+                                    width={0}
+                                    height={0}
+                                    sizes="100vw"
                                     className="w-full h-auto object-cover rounded-xl shadow-md"
                                   />
                                 </div>
