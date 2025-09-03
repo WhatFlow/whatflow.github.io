@@ -22,6 +22,14 @@ export default function Navbar() {
       ? "relative text-green-600 text-lg font-semibold after:absolute after:left-0 after:bottom-[-4px] after:h-[3px] after:w-full after:bg-gradient-to-r after:from-green-500 after:to-emerald-400 after:rounded-full after:transition-all"
       : "relative text-gray-800 text-lg font-semibold hover:text-green-600 transition duration-300 after:absolute after:left-1/2 after:bottom-[-4px] after:h-[3px] after:w-0 hover:after:w-full hover:after:left-0 after:bg-gradient-to-r after:from-green-500 after:to-emerald-400 after:rounded-full after:transition-all";
 
+  // Navigation links (shared between desktop & mobile)
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/features", label: "Features" },
+    { path: "/pricing", label: "Pricing" },
+    { path: "/resources", label: "Resources" },
+  ];
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all ${
@@ -73,9 +81,9 @@ export default function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex lg:gap-x-10 relative">
-          {["/features", "/pricing", "/resources", "/about"].map((path, i) => (
+          {navLinks.map(({ path, label }, i) => (
             <Link key={i} href={path} className={linkClasses(path)}>
-              {path.replace("/", "").charAt(0).toUpperCase() + path.slice(2)}
+              {label}
             </Link>
           ))}
         </div>
@@ -138,19 +146,16 @@ export default function Navbar() {
               </div>
 
               <div className="mt-8 flex flex-col gap-4">
-                {["/features", "/pricing", "/resources", "/about"].map(
-                  (path, i) => (
-                    <Link
-                      key={i}
-                      href={path}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`${linkClasses(path)} block text-lg`}
-                    >
-                      {path.replace("/", "").charAt(0).toUpperCase() +
-                        path.slice(2)}
-                    </Link>
-                  )
-                )}
+                {navLinks.map(({ path, label }, i) => (
+                  <Link
+                    key={i}
+                    href={path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`${linkClasses(path)} block text-lg`}
+                  >
+                    {label}
+                  </Link>
+                ))}
               </div>
 
               <div className="mt-auto pt-6">
