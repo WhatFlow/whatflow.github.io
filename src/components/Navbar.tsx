@@ -31,13 +31,13 @@ export default function Navbar() {
   ];
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all ${
-        scrolled
-          ? "bg-background/60 backdrop-blur-lg shadow-md"
-          : "bg-white shadow-sm"
-      }`}
-    >
+   <header
+  className={`sticky top-0 z-50 transition-all ${
+    scrolled
+      ? "bg-white shadow-md lg:bg-background/60 lg:backdrop-blur-lg lg:shadow-md"
+      : "bg-white shadow-sm"
+  }`}
+>
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
