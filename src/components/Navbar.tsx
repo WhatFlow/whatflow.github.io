@@ -27,6 +27,7 @@ export default function Navbar() {
     { path: "/", label: "Home" },
     { path: "/features", label: "Features" },
     { path: "/pricing", label: "Pricing" },
+    { path: "/official-api-pricing", label: "Official API Pricing" },
     { path: "/resources", label: "Resources" },
   ];
 
