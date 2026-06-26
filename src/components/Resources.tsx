@@ -55,9 +55,9 @@ export default function Resources() {
               RESOURCES & DOCUMENTS
             </span>
           </div>
-          <h2 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
+          <h1 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
             Everything You Need to Succeed
-          </h2>
+          </h1>
           <p className="mt-6 text-lg leading-relaxed text-text-muted max-w-2xl mx-auto">
             Comprehensive guides to help you maximize your{" "}
             <span className="text-primary-dark font-semibold">
@@ -580,15 +580,15 @@ export default function Resources() {
               />
             </svg>
             Need additional help? Visit our{" "}
-            <a
-              href="#"
+            <Link
+              href="/#faq"
               className="text-primary-mid hover:text-primary-dark font-medium underline-offset-4 hover:underline transition-colors mx-1"
             >
               Support Center
-            </a>{" "}
+            </Link>{" "}
             or{" "}
             <a
-              href="#"
+              href="mailto:support@whatflow.tech"
               className="text-primary-mid hover:text-primary-dark font-medium underline-offset-4 hover:underline transition-colors ml-1"
             >
               Contact Us

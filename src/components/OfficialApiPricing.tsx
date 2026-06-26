@@ -159,9 +159,9 @@ export default function OfficialApiPricing() {
           <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-ink border border-border shadow-sm mb-3">
             OFFICIAL API PRICING
           </span>
-          <h2 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
+          <h1 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
             Official API Pricing Plans
-          </h2>
+          </h1>
           <p className="mt-6 text-lg leading-relaxed text-text-muted">
             Use the WhatsApp Official Business API for verified, high-volume messaging.
             Select the plan that fits your business scale.

@@ -244,11 +244,11 @@ export default function FeatureDetails() {
               FEATURES
             </span>
 
-            <h2 className="mt-3 text-3xl font-light tracking-tight text-ink sm:text-4xl">
+            <h1 className="mt-3 text-3xl font-light tracking-tight text-ink sm:text-4xl">
               Complete{" "}
               <span className="text-primary-mid font-semibold">WhatsApp Automation</span>{" "}
               for every stage of the customer journey
-            </h2>
+            </h1>
             <p className="mt-6 text-lg leading-relaxed text-text-muted">
               WhatFlow connects to your existing WhatsApp account to provide a
               comprehensive suite of automations that engage customers

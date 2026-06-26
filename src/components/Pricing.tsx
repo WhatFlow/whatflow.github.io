@@ -87,9 +87,9 @@ export default function Pricing() {
           <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-ink border border-border shadow-sm mb-3">
             PRICING PLANS
           </span>
-          <h2 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
+          <h1 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
             Choose Your Perfect Plan
-          </h2>
+          </h1>
           <p className="mt-6 text-lg leading-relaxed text-text-muted">
             All plans include our full suite of automation features.
             Select the option that best suits your business needs.

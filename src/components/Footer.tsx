@@ -30,30 +30,6 @@ export default function Footer() {
 
           {/* Social links */}
           <div className="flex items-center gap-4">
-            <SocialLink href="https://twitter.com" label="Twitter">
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-                <path
-                  fill="currentColor"
-                  d="M22 5.92c-.77.34-1.6.56-2.47.66a4.27 4.27 0 0 0 1.87-2.35 8.53 8.53 0 0 1-2.7 1.03 4.25 4.25 0 0 0-7.36 2.9c0 .33.04.65.11.95a12.06 12.06 0 0 1-8.76-4.44 4.25 4.25 0 0 0 1.31 5.67 4.18 4.18 0 0 1-1.92-.53v.06a4.25 4.25 0 0 0 3.41 4.17c-.46.12-.94.18-1.44.07a4.26 4.26 0 0 0 3.97 2.95A8.52 8.52 0 0 1 2 18.57a12.03 12.03 0 0 0 6.52 1.91c7.83 0 12.11-6.49 12.11-12.11 0-.18 0-.36-.01-.54.83-.6 1.55-1.35 2.12-2.2z"
-                />
-              </svg>
-            </SocialLink>
-            <SocialLink href="https://instagram.com" label="Instagram">
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-                <path
-                  fill="currentColor"
-                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.51 5.51 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.75a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                />
-              </svg>
-            </SocialLink>
-            <SocialLink href="https://facebook.com" label="Facebook">
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
-                <path
-                  fill="currentColor"
-                  d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.19 8.44 9.94v-7.03H7.9V12.1h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.62.77-1.62 1.56v1.97h2.76l-.44 2.87h-2.32V22c4.78-.75 8.44-4.92 8.44-9.94z"
-                />
-              </svg>
-            </SocialLink>
             <SocialLink
               href="https://linkedin.com/company/whatflow"
               label="LinkedIn"
