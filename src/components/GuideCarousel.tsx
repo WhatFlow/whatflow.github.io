@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -89,13 +88,13 @@ export default function GuideCarousel() {
       <AnimatePresence mode="wait">
         <motion.div
           key={`head-${current}`}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.4 }}
+          exit={{ opacity: 0, y: -15 }}
+          transition={{ duration: 0.25 }}
           className="mb-6"
         >
-          <h4 className="text-xl font-semibold text-gray-800 text-center bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-700">
+          <h4 className="text-xl font-semibold text-ink text-center">
             {heads[current]?.heading}
           </h4>
         </motion.div>
@@ -104,15 +103,15 @@ export default function GuideCarousel() {
       <AnimatePresence mode="wait">
         <motion.ol
           key={`list-${current}`}
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -50 }}
-          transition={{ duration: 0.4 }}
-          className="space-y-5 text-slate-700 mb-11"
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.25 }}
+          className="space-y-5 text-ink mb-11"
         >
           {chunkedSteps[current]?.map((step, index) => (
             <li key={`${current}-${index}`} className="flex items-start gap-4">
-              <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gradient-to-br from-teal-500 to-emerald-600 text-white rounded-full text-sm font-semibold shadow-md shadow-teal-500/20">
+              <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-chat-green text-primary-dark border border-border/30 rounded-full text-sm font-semibold shadow-sm">
                 {step.id}
               </span>
               <span className="text-lg">
@@ -120,7 +119,7 @@ export default function GuideCarousel() {
                 {step.link && (
                   <Link
                     href={step.link.url}
-                    className="inline-flex items-center text-teal-600 hover:text-teal-700 font-medium underline-offset-4 hover:underline transition-colors"
+                    className="inline-flex items-center text-primary-mid hover:text-primary-dark font-medium underline-offset-4 hover:underline transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -150,7 +149,7 @@ export default function GuideCarousel() {
       <div className="flex items-center justify-between mt-auto mb-4">
         <button
           onClick={prev}
-          className="px-4 py-2 text-sm rounded-lg bg-slate-100 hover:bg-slate-200 transition"
+          className="px-4 py-2 text-sm rounded-full bg-chat-cream border border-border hover:bg-primary/20 text-ink transition cursor-pointer"
         >
           ◀ Prev
         </button>
@@ -159,14 +158,14 @@ export default function GuideCarousel() {
             <span
               key={`dot-${i}`}
               className={`w-2.5 h-2.5 rounded-full ${
-                i === current ? "bg-teal-600" : "bg-slate-300"
+                i === current ? "bg-primary-mid" : "bg-border"
               }`}
             />
           ))}
         </div>
         <button
           onClick={next}
-          className="px-4 py-2 text-sm rounded-lg bg-slate-100 hover:bg-slate-200 transition"
+          className="px-4 py-2 text-sm rounded-full bg-chat-cream border border-border hover:bg-primary/20 text-ink transition cursor-pointer"
         >
           Next ▶
         </button>

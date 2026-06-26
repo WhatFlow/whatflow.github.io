@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { MessageCircle, Bot, ShoppingCart, BarChart3 } from "lucide-react";
 import FadeInSection from "./FadeIn";
 
@@ -13,62 +12,33 @@ type FeatureCardProps = {
 };
 
 const FeatureCard = ({ icon, title, text, index }: FeatureCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.12 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{
-        y: -6,
-        scale: 1.02,
-        transition: { duration: 0.3, ease: "easeOut" },
+        y: -4,
+        transition: { duration: 0.2, ease: "easeOut" },
       }}
-      className="relative flex flex-col h-full items-center text-center p-5 rounded-2xl border border-green-100 bg-white shadow-lg hover:shadow-2xl transition-all duration-300"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="relative flex flex-col h-full items-center text-center p-6 rounded-[24px] border border-border bg-white shadow-sm transition-all duration-300 group"
     >
       {/* Icon Wrapper */}
-      <motion.div
-        className="relative rounded-full p-4 mb-5 bg-gradient-to-tr from-teal-50 via-emerald-50 to-teal-100 shadow-inner"
-        animate={{
-          scale: isHovered ? 1.1 : 1,
-          boxShadow: isHovered
-            ? "0 8px 30px rgba(13,148,136,0.25)"
-            : "0 0 0px rgba(13,148,136,0)",
-        }}
-        transition={{ duration: 0.35 }}
-      >
-        <motion.div className="relative z-10 text-teal-600">{icon}</motion.div>
-      </motion.div>
+      <div className="relative rounded-full p-4 mb-5 bg-chat-cream border border-border transition-colors duration-300 group-hover:bg-primary/20">
+        <div className="relative z-10 text-primary-mid transition-colors duration-300 group-hover:text-primary-dark">
+          {icon}
+        </div>
+      </div>
 
       {/* Title */}
-      <motion.h3
-        className="text-xl font-semibold tracking-wide text-gray-900 mb-3"
-        animate={{ color: isHovered ? "#0D9488" : "#1F2937" }}
-        transition={{ duration: 0.25 }}
-      >
+      <h3 className="text-xl font-semibold text-ink mb-3 transition-colors duration-300 group-hover:text-primary-mid">
         {title}
-      </motion.h3>
+      </h3>
 
       {/* Text */}
-      <motion.p
-        className="text-gray-600 leading-relaxed text-base"
-        animate={{ opacity: isHovered ? 1 : 0.95 }}
-      >
+      <p className="text-text-muted leading-relaxed text-base">
         {text}
-      </motion.p>
-
-      {/* Bottom Accent Bar */}
-      <motion.div
-        className="w-12 h-1 mt-5 rounded-full bg-gradient-to-r from-teal-400 to-emerald-500"
-        animate={{
-          width: isHovered ? "48px" : "12px",
-          opacity: isHovered ? 1 : 0,
-        }}
-        transition={{ duration: 0.35 }}
-      />
+      </p>
     </motion.div>
   );
 };
@@ -102,22 +72,19 @@ const features = [
 
 export default function HallMarks() {
   return (
-    <div className="py-20 bg-gradient-to-br from-white via-teal-50 to-green-50 relative">
+    <div className="py-20 bg-chat-cream relative border-b border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Heading */}
         <FadeInSection>
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50/90 ring-1 ring-emerald-200 px-4 py-1 text-sm font-medium text-emerald-700 shadow-sm backdrop-blur">
-              <span className="text-base">💎</span> SIMPLE & POWERFUL
+            <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-ink border border-border shadow-sm">
+              SIMPLE & POWERFUL
             </span>
 
-            <h2 className="mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Everything you need to {""}
-              <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
-                Automate
-              </span>
+            <h2 className="mt-4 text-3xl font-light tracking-tight text-ink sm:text-4xl">
+              Everything you need to <span className="text-primary-mid font-semibold">Automate</span>
             </h2>
-            <p className="mt-4 text-lg leading-7 text-gray-600">
+            <p className="mt-4 text-lg leading-relaxed text-text-muted">
               Powerful WhatsApp automation features designed to boost your
               Shopify store's sales and customer experience.
             </p>
@@ -126,7 +93,7 @@ export default function HallMarks() {
 
         <FadeInSection>
           {/* Feature Cards */}
-          <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, idx) => (
               <FeatureCard
                 key={idx}

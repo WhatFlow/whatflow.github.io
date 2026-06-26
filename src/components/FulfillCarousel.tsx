@@ -74,23 +74,22 @@ export default function FulfillCarousel() {
           ].map((stage, index) => (
             <div key={index} className="flex items-start gap-3">
               <div className="relative">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center text-white shadow-md">
+                <div className="w-8 h-8 rounded-full bg-chat-green text-primary-dark border border-border/30 flex items-center justify-center text-sm font-semibold shadow-sm">
                   {index + 1}
                 </div>
                 {index < 4 && (
-                  <div className="absolute top-8 left-1/2 w-0.5 h-10 bg-gradient-to-b from-teal-500 to-transparent transform -translate-x-1/2"></div>
+                  <div className="absolute top-8 left-1/2 w-0.5 h-10 bg-border transform -translate-x-1/2"></div>
                 )}
               </div>
-              <div className="flex-1 pt-1">
-                <h4 className="font-semibold text-slate-800">{stage.stage}</h4>
-                <p className="text-slate-600 text-sm">{stage.description}</p>
+              <div className="flex-1 pt-0.5">
+                <h4 className="font-semibold text-ink">{stage.stage}</h4>
+                <p className="text-text-muted text-sm">{stage.description}</p>
               </div>
             </div>
           ))}
         </div>
       ),
     },
-
     {
       heading: "Message Customization",
       steps: [
@@ -133,13 +132,13 @@ export default function FulfillCarousel() {
       <AnimatePresence mode="wait">
         <motion.div
           key={`head-${current}`}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.4 }}
+          exit={{ opacity: 0, y: -15 }}
+          transition={{ duration: 0.25 }}
           className="mb-6"
         >
-          <h4 className="text-xl font-semibold text-gray-800 text-center bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-700">
+          <h4 className="text-xl font-semibold text-ink text-center">
             {sections[current]?.heading}
           </h4>
         </motion.div>
@@ -148,20 +147,20 @@ export default function FulfillCarousel() {
       <AnimatePresence mode="wait">
         <motion.div
           key={`content-${current}`}
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -50 }}
-          transition={{ duration: 0.4 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.25 }}
           className="mb-11"
         >
           {sections[current]?.steps ? (
-            <ol className="space-y-5 text-slate-700">
+            <ol className="space-y-5 text-ink">
               {sections[current].steps?.map((step, index) => (
                 <li
                   key={`${current}-${index}`}
                   className="flex items-start gap-4"
                 >
-                  <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gradient-to-br from-teal-500 to-emerald-600 text-white rounded-full text-sm font-semibold shadow-md shadow-teal-500/20">
+                  <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-chat-green text-primary-dark border border-border/30 rounded-full text-sm font-semibold shadow-sm">
                     {step.id}
                   </span>
                   <span className="text-lg">
@@ -169,7 +168,7 @@ export default function FulfillCarousel() {
                     {step.link && (
                       <Link
                         href={step.link.url}
-                        className="inline-flex items-center text-teal-600 hover:text-teal-700 font-medium underline-offset-4 hover:underline transition-colors"
+                        className="inline-flex items-center text-primary-mid hover:text-primary-dark font-medium underline-offset-4 hover:underline transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -203,7 +202,7 @@ export default function FulfillCarousel() {
       <div className="flex items-center justify-between mt-auto mb-4">
         <button
           onClick={prev}
-          className="px-4 py-2 text-sm rounded-lg bg-slate-100 hover:bg-slate-200 transition"
+          className="px-4 py-2 text-sm rounded-full bg-chat-cream border border-border hover:bg-primary/20 text-ink transition cursor-pointer"
         >
           ◀ Prev
         </button>
@@ -212,14 +211,14 @@ export default function FulfillCarousel() {
             <span
               key={`dot-${i}`}
               className={`w-2.5 h-2.5 rounded-full ${
-                i === current ? "bg-teal-600" : "bg-slate-300"
+                i === current ? "bg-primary-mid" : "bg-border"
               }`}
             />
           ))}
         </div>
         <button
           onClick={next}
-          className="px-4 py-2 text-sm rounded-lg bg-slate-100 hover:bg-slate-200 transition"
+          className="px-4 py-2 text-sm rounded-full bg-chat-cream border border-border hover:bg-primary/20 text-ink transition cursor-pointer"
         >
           Next ▶
         </button>

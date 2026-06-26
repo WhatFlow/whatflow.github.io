@@ -19,8 +19,8 @@ export default function Navbar() {
 
   const linkClasses = (path: string) =>
     pathname === path
-      ? "relative text-green-600 text-lg font-semibold after:absolute after:left-0 after:bottom-[-4px] after:h-[3px] after:w-full after:bg-gradient-to-r after:from-green-500 after:to-emerald-400 after:rounded-full after:transition-all"
-      : "relative text-gray-800 text-lg font-semibold hover:text-green-600 transition duration-300 after:absolute after:left-1/2 after:bottom-[-4px] after:h-[3px] after:w-0 hover:after:w-full hover:after:left-0 after:bg-gradient-to-r after:from-green-500 after:to-emerald-400 after:rounded-full after:transition-all";
+      ? "relative text-primary text-base font-normal py-2 px-3 border-b-2 border-primary"
+      : "relative text-ink text-base font-normal py-2 px-3 hover:text-primary transition duration-300";
 
   // Navigation links (shared between desktop & mobile)
   const navLinks = [
@@ -32,13 +32,13 @@ export default function Navbar() {
   ];
 
   return (
-   <header
-  className={`sticky top-0 z-50 transition-all ${
-    scrolled
-      ? "bg-white shadow-md lg:bg-background/60 lg:backdrop-blur-lg lg:shadow-md"
-      : "bg-white shadow-sm"
-  }`}
->
+    <header
+      className={`sticky top-0 z-50 transition-all ${
+        scrolled
+          ? "bg-white border-b border-border shadow-sm"
+          : "bg-white"
+      }`}
+    >
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -61,7 +61,7 @@ export default function Navbar() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-green-50 hover:text-green-600 transition"
+            className="inline-flex items-center justify-center rounded-md p-2.5 text-ink hover:bg-chat-cream hover:text-primary transition"
             onClick={() => setMobileMenuOpen(true)}
           >
             <svg
@@ -81,7 +81,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Nav Links */}
-        <div className="hidden lg:flex lg:gap-x-10 relative">
+        <div className="hidden lg:flex lg:gap-x-8 relative">
           {navLinks.map(({ path, label }, i) => (
             <Link key={i} href={path} className={linkClasses(path)}>
               {label}
@@ -95,7 +95,7 @@ export default function Navbar() {
             href="https://apps.shopify.com/whatflow"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-6 inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-green-500 to-teal-500 text-white font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all"
+            className="ml-6 inline-flex items-center px-7 py-3 rounded-full bg-primary text-ink border border-ink font-semibold transition-all duration-300 hover:bg-ink hover:text-white hover:border-ink"
           >
             Install Now
           </Link>
@@ -109,7 +109,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="lg:hidden fixed inset-0 z-50 bg-black/40"
+            className="lg:hidden fixed inset-0 z-50 bg-ink/40"
           >
             <motion.div
               initial={{ x: "100%" }}
@@ -128,7 +128,7 @@ export default function Navbar() {
                 />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-gray-700 hover:text-green-600 transition"
+                  className="p-2 text-ink hover:text-primary transition"
                 >
                   <svg
                     className="h-6 w-6"
@@ -165,7 +165,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block text-center px-5 py-2.5 rounded-full bg-green-600 text-white font-medium shadow-md hover:bg-green-700 transition"
+                  className="block text-center px-5 py-3 rounded-full bg-primary text-ink border border-ink font-semibold transition-all duration-300 hover:bg-ink hover:text-white"
                 >
                   Install Now
                 </Link>

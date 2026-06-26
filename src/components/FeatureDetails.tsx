@@ -1,6 +1,7 @@
 "use client";
 
 import FadeInSection from "./FadeIn";
+
 export default function FeatureDetails() {
   const features = [
     {
@@ -9,7 +10,7 @@ export default function FeatureDetails() {
         "Automatically send order confirmation messages to your customers via WhatsApp, providing instant updates and reducing support inquiries.",
       icon: (
         <svg
-          className="h-6 w-6 text-green-600"
+          className="h-6 w-6 text-primary-mid"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -29,7 +30,7 @@ export default function FeatureDetails() {
         "Recover lost sales by automatically reaching out to customers who abandoned their shopping carts, increasing conversion rates and revenue.",
       icon: (
         <svg
-          className="h-6 w-6 text-green-600"
+          className="h-6 w-6 text-primary-mid"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -49,7 +50,7 @@ export default function FeatureDetails() {
         "Keep customers informed about their orders with automatic shipping notifications and delivery updates, enhancing the post-purchase experience.",
       icon: (
         <svg
-          className="h-6 w-6 text-green-600"
+          className="h-6 w-6 text-primary-mid"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -69,7 +70,7 @@ export default function FeatureDetails() {
         "Handle order cancellations gracefully with automated messages that confirm the cancellation and provide options for alternatives or future purchases.",
       icon: (
         <svg
-          className="h-6 w-6 text-green-600"
+          className="h-6 w-6 text-primary-mid"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -89,7 +90,7 @@ export default function FeatureDetails() {
         "Create personalized templates for each automation type, tailoring your communication to match your brand voice and customer relationship strategy.",
       icon: (
         <svg
-          className="h-6 w-6 text-green-600"
+          className="h-6 w-6 text-primary-mid"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -109,7 +110,7 @@ export default function FeatureDetails() {
         "Track message delivery and customer responses directly in your Shopify admin with automatic order tagging, keeping you informed of conversation status without leaving your store.",
       icon: (
         <svg
-          className="h-6 w-6 text-green-600"
+          className="h-6 w-6 text-primary-mid"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -134,7 +135,7 @@ export default function FeatureDetails() {
         "Track performance across all automation types with detailed reporting on message delivery, response rates, conversion metrics, and revenue impact.",
       icon: (
         <svg
-          className="h-6 w-6 text-green-600"
+          className="h-6 w-6 text-primary-mid"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -154,7 +155,7 @@ export default function FeatureDetails() {
         'Connect in minutes using WhatsApp\'s "link a device" feature - no complex API setup or business account required. Works with your existing WhatsApp account.',
       icon: (
         <svg
-          className="h-6 w-6 text-green-600"
+          className="h-6 w-6 text-primary-mid"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -174,7 +175,7 @@ export default function FeatureDetails() {
         "Send personalized messages to multiple customers at once by uploading a CSV file. Perfect for promotional campaigns, announcements, or targeted marketing - absolutely free.",
       icon: (
         <svg
-          className="h-6 w-6 text-green-600"
+          className="h-6 w-6 text-primary-mid"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -194,7 +195,7 @@ export default function FeatureDetails() {
         "Automatically notify customers when out-of-stock products become available again. Increase sales by reconnecting with interested customers the moment inventory is replenished - absolutely free.",
       icon: (
         <svg
-          className="h-6 w-6 text-green-600"
+          className="h-6 w-6 text-primary-mid"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -214,7 +215,7 @@ export default function FeatureDetails() {
         "Add a customizable WhatsApp contact button to your store with advanced styling options, positioning controls, and personalized messages. Enhance customer support accessibility - absolutely free.",
       icon: (
         <svg
-          className="h-6 w-6 text-green-600"
+          className="h-6 w-6 text-primary-mid"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -233,41 +234,22 @@ export default function FeatureDetails() {
   return (
     <section
       id="features"
-      className="relative isolate overflow-hidden py-24 sm:py-32"
+      className="relative isolate overflow-hidden py-24 sm:py-32 bg-chat-cream border-b border-border"
     >
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-teal-50 to-green-50 -z-10"></div>
-      <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white bg-opacity-20 shadow-xl shadow-teal-600/10 ring-1 ring-teal-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
-      <div className="absolute -top-52 left-1/2 -z-10">
-        <svg
-          viewBox="0 0 1155 678"
-          xmlns="http://www.w3.org/2000/svg"
-          width="500"
-          height="400"
-          className="fill-teal-100/50 opacity-30"
-        >
-          <path d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z" />
-        </svg>
-      </div>
-      {/* Animated Gradient Glow */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_rgba(20,184,166,0.15),transparent_60%)] animate-pulse"></div>
-
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <FadeInSection>
           <div className="mx-auto max-w-2xl lg:text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50/90 ring-1 ring-emerald-200 px-4 py-1 text-sm font-medium text-emerald-700 shadow-sm backdrop-blur">
-              <span className="text-base">🎯</span> FEATURES
+            <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-ink border border-border shadow-sm">
+              FEATURES
             </span>
 
-            <p className="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-light tracking-tight text-ink sm:text-4xl">
               Complete{" "}
-              <span className="bg-gradient-to-r from-teal-500 to-green-500 bg-clip-text text-transparent">
-                WhatsApp automation{" "}
-              </span>
+              <span className="text-primary-mid font-semibold">WhatsApp Automation</span>{" "}
               for every stage of the customer journey
-            </p>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-text-muted">
               WhatFlow connects to your existing WhatsApp account to provide a
               comprehensive suite of automations that engage customers
               throughout their shopping experience, maximizing revenue and
@@ -278,44 +260,30 @@ export default function FeatureDetails() {
 
         {/* Feature Grid */}
         <div className="mx-auto mt-16 max-w-2xl lg:mt-20 lg:max-w-none">
-          {/* <FadeInSection> */}
           <dl className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
             {features.map((feature, i) => (
               <div
                 key={i}
-                className="relative rounded-2xl bg-white p-8 group transition-all duration-300 last:lg:col-span-2 last:lg:mx-auto last:lg:max-w-xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)",
-                  boxShadow:
-                    "0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)",
-                }}
+                className="relative rounded-[24px] bg-white p-8 border border-border group transition-all duration-300 hover:shadow-md last:lg:col-span-2 last:lg:mx-auto last:lg:max-w-xl shadow-sm"
               >
-                {/* Gradient border effect */}
-                <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                  {/* <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-200/30 via-teal-100/20 to-teal-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
-                  <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-green-400 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                {/* Accent bar */}
+                <div className="absolute inset-x-0 bottom-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+
+                {/* Icon Wrapper */}
+                <div className="absolute border border-border -top-6 left-8 flex h-14 w-14 items-center justify-center rounded-xl bg-chat-cream group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="text-primary-mid">{feature.icon}</div>
                 </div>
 
-                {/* Icon with enhanced style */}
-                <div className="absolute border-[0.5px] border-teal-500 -top-6 left-8 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-50 via-teal-100 to-emerald-200 shadow-inner">
-                  <div className="text-white">{feature.icon}</div>
-                </div>
-
-                {/* Content with better spacing */}
-                <dt className="mt-10 text-xl font-bold text-gray-900 tracking-tight">
+                {/* Content */}
+                <dt className="mt-10 text-xl font-bold text-ink tracking-tight">
                   {feature.name}
                 </dt>
-                <dd className="mt-3 text-base leading-7 text-gray-600">
+                <dd className="mt-3 text-base leading-relaxed text-text-muted">
                   {feature.description}
                 </dd>
-
-                {/* Subtle corner accent */}
-                <div className="absolute bottom-2 right-2 w-10 h-10 rounded-full bg-gradient-to-br from-green-100 to-teal-50 opacity-30"></div>
               </div>
             ))}
           </dl>
-          {/* </FadeInSection> */}
         </div>
       </div>
     </section>

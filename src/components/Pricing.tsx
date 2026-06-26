@@ -1,3 +1,14 @@
+"use client";
+
+import {
+  Sprout,
+  TrendingUp,
+  LineChart,
+  Briefcase,
+  Building,
+  Star,
+} from "lucide-react";
+
 export default function Pricing() {
   const commonFeatures = [
     { name: "Connect with your regular WhatsApp account", included: true },
@@ -17,7 +28,7 @@ export default function Pricing() {
       limit: "50 messages",
       nextTier: "Up to 50 messages, then auto-upgrades to Starter plan.",
       featured: false,
-      icon: "🌱",
+      icon: <Sprout className="w-6 h-6 text-primary-mid" />,
     },
     {
       name: "Starter",
@@ -27,7 +38,7 @@ export default function Pricing() {
       nextTier: "Up to 1,500 messages, then auto-upgrades to Growth plan.",
       featured: false,
       additionalFeature: "3-day free trial",
-      icon: "🚀",
+      icon: <TrendingUp className="w-6 h-6 text-primary-mid" />,
     },
     {
       name: "Growth",
@@ -37,7 +48,7 @@ export default function Pricing() {
       nextTier: "Up to 3,000 messages, then auto-upgrades to Professional plan.",
       featured: true,
       popular: "Most Popular",
-      icon: "📈",
+      icon: <LineChart className="w-6 h-6 text-primary-mid" />,
     },
     {
       name: "Professional",
@@ -46,7 +57,7 @@ export default function Pricing() {
       limit: "5,000 messages",
       nextTier: "Up to 5,000 messages, then auto-upgrades to Enterprise plan.",
       featured: false,
-      icon: "💼",
+      icon: <Briefcase className="w-6 h-6 text-primary-mid" />,
     },
     {
       name: "Enterprise",
@@ -55,7 +66,7 @@ export default function Pricing() {
       limit: "12,500 messages",
       nextTier: "Up to 12,500 messages, then auto-upgrades to Ultimate plan.",
       featured: false,
-      icon: "🏢",
+      icon: <Building className="w-6 h-6 text-primary-mid" />,
     },
     {
       name: "Ultimate",
@@ -64,29 +75,22 @@ export default function Pricing() {
       limit: "No limits!",
       nextTier: "",
       featured: false,
-      icon: "🌟",
+      icon: <Star className="w-6 h-6 text-primary-mid" />,
     },
   ];
 
   return (
-   <div className="relative min-h-screen bg-gradient-to-br from-white via-teal-50 to-green-50 py-24 sm:py-32 overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br from-teal-100/30 to-teal-300/20 blur-3xl"></div>
-          <div className="absolute top-1/4 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-blue-100/20 to-indigo-200/10 blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 rounded-full bg-gradient-to-br from-purple-100/20 to-pink-200/10 blur-3xl"></div>
-        </div>
-      
+    <div className="relative min-h-screen bg-chat-cream py-24 sm:py-32 overflow-hidden border-b border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center">
-         <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50/90 ring-1 ring-emerald-200 px-4 py-1 text-sm font-medium text-emerald-700 shadow-sm backdrop-blur mb-3">
-              <span className="text-base">💲</span> PRICING PLANS
+          <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-ink border border-border shadow-sm mb-3">
+            PRICING PLANS
           </span>
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+          <h2 className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
             Choose Your Perfect Plan
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-relaxed text-text-muted">
             All plans include our full suite of automation features.
             Select the option that best suits your business needs.
           </p>
@@ -97,48 +101,50 @@ export default function Pricing() {
           {plans.slice(0, 3).map((plan) => (
             <div
               key={plan.name}
-              className={`relative flex flex-col rounded-3xl border bg-white/90 backdrop-blur-md p-8 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
-                plan.featured 
-                  ? "border-emerald-500 ring-2 ring-emerald-500" 
-                  : "border-gray-200 hover:border-emerald-300"
+              className={`relative flex flex-col rounded-[24px] border p-8 bg-white transition-all duration-300 hover:shadow-md ${
+                plan.featured
+                  ? "border-primary-mid ring-2 ring-primary-mid shadow-md"
+                  : "border-border"
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 px-5 py-1.5 text-xs font-semibold uppercase text-white shadow-lg shadow-emerald-500/30">
+                  <span className="rounded-full bg-primary-mid px-5 py-1.5 text-xs font-semibold uppercase text-white border border-primary-mid shadow-sm">
                     {plan.popular}
                   </span>
                 </div>
               )}
 
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-3xl">{plan.icon}</span>
-                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-600">
+                <div className="p-2 bg-chat-cream border border-border rounded-xl">
+                  {plan.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-ink">
                   {plan.name}
                 </h3>
               </div>
               
-              <p className="mt-2 text-sm text-gray-600 min-h-[60px]">{plan.description}</p>
+              <p className="mt-2 text-sm text-text-muted min-h-[60px]">{plan.description}</p>
 
               <div className="mt-6 flex items-baseline gap-x-2">
-                <span className="text-5xl font-extrabold text-gray-900">{plan.price}</span>
-                <span className="text-sm font-medium text-gray-500">/month</span>
+                <span className="text-5xl font-extrabold text-ink">{plan.price}</span>
+                <span className="text-sm font-medium text-text-muted">/month</span>
               </div>
 
-              <div className="mt-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 px-4 py-3 text-sm font-medium text-emerald-700 border border-emerald-100/50">
+              <div className="mt-4 rounded-xl bg-chat-cream px-4 py-3 text-sm font-semibold text-primary-dark border border-border">
                 {plan.limit}
               </div>
 
               {plan.nextTier && (
-                <p className="mt-3 text-xs text-gray-500">{plan.nextTier}</p>
+                <p className="mt-3 text-xs text-text-muted">{plan.nextTier}</p>
               )}
 
-              <div className="my-6 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+              <div className="my-6 h-px bg-border"></div>
 
-              <ul className="space-y-4 text-sm text-gray-700">
+              <ul className="space-y-4 text-sm text-ink font-normal">
                 {commonFeatures.map((feature) => (
                   <li key={feature.name} className="flex items-start gap-x-3">
-                    <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                    <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-chat-green text-primary-dark border border-border/20">
                       <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 20 20">
                         <path
                           fillRule="evenodd"
@@ -153,18 +159,18 @@ export default function Pricing() {
               </ul>
 
               <div className="mt-8">
-                <button className={`cursor-pointer w-full rounded-xl py-3.5 font-medium transition-all duration-200 ${
-                  plan.featured 
-                    ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50" 
-                    : "bg-white text-emerald-600 border border-emerald-200 hover:border-emerald-400 hover:bg-emerald-50"
+                <button className={`cursor-pointer w-full rounded-[14px] py-3.5 font-semibold transition-all duration-300 border border-ink ${
+                  plan.featured
+                    ? "bg-primary text-ink hover:bg-ink hover:text-white"
+                    : "bg-white text-ink hover:bg-chat-cream"
                 }`}>
                   Get Started
                 </button>
               </div>
 
               {plan.additionalFeature && (
-                <div className="mt-4 text-center text-sm font-semibold text-emerald-600">
-                  ✨ {plan.additionalFeature}
+                <div className="mt-4 text-center text-sm font-semibold text-primary-dark">
+                  {plan.additionalFeature}
                 </div>
               )}
             </div>
@@ -173,13 +179,13 @@ export default function Pricing() {
 
         {/* Advanced Plans */}
         <div className="mt-24 text-center">
-          <div className="inline-flex items-center justify-center px-4 py-1.5 mb-3 rounded-full bg-gradient-to-r from-teal-500 to-emerald-500 text-white text-sm font-medium tracking-wide shadow-lg shadow-emerald-500/20">
+          <div className="inline-flex items-center justify-center px-4 py-1.5 mb-3 rounded-full bg-white text-ink border border-border text-sm font-medium tracking-wide shadow-sm">
             Advanced Options
           </div>
-          <h3 className="text-2xl font-bold text-gray-900">
+          <h3 className="text-2xl font-light text-ink">
             High-Volume Business Solutions
           </h3>
-          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-3 text-text-muted max-w-2xl mx-auto">
             For businesses that need more scale & flexibility with enterprise-grade solutions.
           </p>
         </div>
@@ -188,36 +194,38 @@ export default function Pricing() {
           {plans.slice(3).map((plan) => (
             <div
               key={plan.name}
-              className="flex flex-col rounded-3xl border border-gray-200 bg-white/90 backdrop-blur-md p-8 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-teal-300"
+              className="flex flex-col rounded-[24px] border border-border p-8 bg-white transition-all duration-300 hover:shadow-md"
             >
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-3xl">{plan.icon}</span>
-                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-600">
+                <div className="p-2 bg-chat-cream border border-border rounded-xl">
+                  {plan.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-ink">
                   {plan.name}
                 </h3>
               </div>
               
-              <p className="mt-2 text-sm text-gray-600 min-h-[60px]">{plan.description}</p>
+              <p className="mt-2 text-sm text-text-muted min-h-[60px]">{plan.description}</p>
 
               <div className="mt-6 flex items-baseline gap-x-2">
-                <span className="text-5xl font-extrabold text-gray-900">{plan.price}</span>
-                <span className="text-sm font-medium text-gray-500">/month</span>
+                <span className="text-5xl font-extrabold text-ink">{plan.price}</span>
+                <span className="text-sm font-medium text-text-muted">/month</span>
               </div>
 
-              <div className="mt-4 rounded-xl bg-gradient-to-r from-teal-50 to-emerald-50 px-4 py-3 text-sm font-medium text-teal-700 border border-teal-100/50">
+              <div className="mt-4 rounded-xl bg-chat-cream px-4 py-3 text-sm font-semibold text-primary-dark border border-border">
                 {plan.limit}
               </div>
 
               {plan.nextTier && (
-                <p className="mt-3 text-xs text-gray-500">{plan.nextTier}</p>
+                <p className="mt-3 text-xs text-text-muted">{plan.nextTier}</p>
               )}
 
-              <div className="my-6 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+              <div className="my-6 h-px bg-border"></div>
 
-              <ul className="space-y-4 text-sm text-gray-700">
+              <ul className="space-y-4 text-sm text-ink font-normal">
                 {commonFeatures.map((feature) => (
                   <li key={feature.name} className="flex items-start gap-x-3">
-                    <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-teal-50 text-teal-600">
+                    <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-chat-green text-primary-dark border border-border/20">
                       <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 20 20">
                         <path
                           fillRule="evenodd"
@@ -231,12 +239,8 @@ export default function Pricing() {
                 ))}
               </ul>
 
-               <div className="mt-8">
-                <button className={`cursor-pointer w-full rounded-xl py-3.5 font-medium transition-all duration-200 ${
-                  plan.featured 
-                    ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50" 
-                    : "bg-white text-emerald-600 border border-emerald-200 hover:border-emerald-400 hover:bg-emerald-50"
-                }`}>
+              <div className="mt-8">
+                <button className="cursor-pointer w-full rounded-[14px] py-3.5 font-semibold transition-all duration-300 border border-ink bg-white text-ink hover:bg-chat-cream">
                   Get Started
                 </button>
               </div>
