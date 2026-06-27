@@ -201,8 +201,11 @@ export default function OfficialApiCostCalculator() {
   }, [totalMessageCount]);
 
   const recommendedPlan = useMemo(() => {
-    return appPlanOptions.reduce((best, plan) => (plan.total < best.total ? plan : best));
-  }, [appPlanOptions]);
+    const eligiblePlans = totalMessageCount > 100
+      ? appPlanOptions.filter((plan) => plan.name !== "Free to Install")
+      : appPlanOptions;
+    return eligiblePlans.reduce((best, plan) => (plan.total < best.total ? plan : best));
+  }, [appPlanOptions, totalMessageCount]);
 
   const planInfo = useMemo(() => {
     return planDetails[recommendedPlan.name];
