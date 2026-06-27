@@ -1,10 +1,12 @@
 "use client";
-import Navbar from "@/components/Navbar";
-import OfficialApiPricing from "@/components/OfficialApiPricing";
+
 import Footer from "@/components/Footer";
-import LoadingBar from "react-top-loading-bar";
-import { useState, useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import OfficialApiCostCalculator from "@/components/OfficialApiCostCalculator";
+import OfficialApiPricing from "@/components/OfficialApiPricing";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import LoadingBar from "react-top-loading-bar";
 
 export default function OfficialApiPricingPage() {
   const [progress, setProgress] = useState(0);
@@ -27,6 +29,7 @@ export default function OfficialApiPricingPage() {
       />
       <Navbar />
       <OfficialApiPricing />
+      <OfficialApiCostCalculator />
       <Footer />
     </main>
   );
