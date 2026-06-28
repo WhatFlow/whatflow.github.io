@@ -141,8 +141,8 @@ function displayRate(rate: number) {
 }
 
 export default function OfficialApiCostCalculator() {
-  const [orders, setOrders] = useState<number>(650);
-  const [messagesPerOrder, setMessagesPerOrder] = useState<number>(1);
+  const [orders, setOrders] = useState<number | "">("");
+  const [messagesPerOrder, setMessagesPerOrder] = useState<number | "">("");
   const [marketIndex, setMarketIndex] = useState<number>(1); // Pakistan by default
   const [messageType, setMessageType] = useState<"utility" | "marketing" | "authentication" | "mixed">("utility");
 
@@ -154,21 +154,22 @@ export default function OfficialApiCostCalculator() {
   // Derive counts & categories based on selected mode
   const derivedMessagesPerOrder = useMemo(() => {
     if (messageType !== "mixed") {
-      return messagesPerOrder;
+      return typeof messagesPerOrder === "number" ? messagesPerOrder : 1;
     }
     return (useConfirmation ? 1 : 0) + (useFulfillment ? 1 : 0) + (useNotification ? 1 : 0);
   }, [messageType, messagesPerOrder, useConfirmation, useFulfillment, useNotification]);
 
   const messageSplit = useMemo(() => {
-    const totalOrders = Math.max(0, Math.floor(orders));
+    const totalOrders = typeof orders === "number" ? Math.max(0, Math.floor(orders)) : 0;
+    const msgPerOrderVal = typeof derivedMessagesPerOrder === "number" ? derivedMessagesPerOrder : 1;
     if (messageType === "utility") {
-      return { utility: totalOrders * derivedMessagesPerOrder, marketing: 0, authentication: 0 };
+      return { utility: totalOrders * msgPerOrderVal, marketing: 0, authentication: 0 };
     }
     if (messageType === "marketing") {
-      return { utility: 0, marketing: totalOrders * derivedMessagesPerOrder, authentication: 0 };
+      return { utility: 0, marketing: totalOrders * msgPerOrderVal, authentication: 0 };
     }
     if (messageType === "authentication") {
-      return { utility: 0, marketing: 0, authentication: totalOrders * derivedMessagesPerOrder };
+      return { utility: 0, marketing: 0, authentication: totalOrders * msgPerOrderVal };
     }
     // Mixed Mode
     const utilityPerOrder = (useConfirmation ? 1 : 0) + (useFulfillment ? 1 : 0);
@@ -201,10 +202,18 @@ export default function OfficialApiCostCalculator() {
   }, [totalMessageCount]);
 
   const recommendedPlan = useMemo(() => {
-    const eligiblePlans = totalMessageCount > 100
-      ? appPlanOptions.filter((plan) => plan.name !== "Free to Install")
-      : appPlanOptions;
-    return eligiblePlans.reduce((best, plan) => (plan.total < best.total ? plan : best));
+    let recommendedName: "Free to Install" | "Starter" | "Growth" | "Scale";
+    if (totalMessageCount <= 1100) {
+      recommendedName = "Free to Install";
+    } else if (totalMessageCount <= 10000) {
+      recommendedName = "Starter";
+    } else if (totalMessageCount <= 48000) {
+      recommendedName = "Growth";
+    } else {
+      recommendedName = "Scale";
+    }
+    const chosenPlan = appPlanOptions.find((plan) => plan.name === recommendedName);
+    return chosenPlan || appPlanOptions[0];
   }, [appPlanOptions, totalMessageCount]);
 
   const planInfo = useMemo(() => {
@@ -268,7 +277,7 @@ export default function OfficialApiCostCalculator() {
                 type="number"
                 min="0"
                 value={orders}
-                onChange={(e) => setOrders(Math.max(0, parseInt(e.target.value) || 0))}
+                onChange={(e) => setOrders(e.target.value === "" ? "" : Math.max(0, parseInt(e.target.value) || 0))}
                 className="mt-2 rounded-xl border border-gray-300 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/10"
               />
               <span className="mt-1 text-[11px] text-gray-400">Required</span>
@@ -284,8 +293,8 @@ export default function OfficialApiCostCalculator() {
                 type="number"
                 min="1"
                 disabled={messageType === "mixed"}
-                value={derivedMessagesPerOrder}
-                onChange={(e) => setMessagesPerOrder(Math.max(1, parseInt(e.target.value) || 1))}
+                value={messageType === "mixed" ? derivedMessagesPerOrder : messagesPerOrder}
+                onChange={(e) => setMessagesPerOrder(e.target.value === "" ? "" : Math.max(1, parseInt(e.target.value) || 1))}
                 className="mt-2 rounded-xl border border-gray-300 px-4 py-3 text-sm text-gray-950 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/10 disabled:bg-gray-50 disabled:text-gray-400"
               />
               <span className="mt-1 text-[11px] text-gray-400">
@@ -476,7 +485,7 @@ export default function OfficialApiCostCalculator() {
                     </svg>
                   </div>
                   <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Estimated Orders</p>
-                  <p className="mt-1 text-2xl font-bold text-emerald-600 tabular-nums">{integer.format(orders)}</p>
+                  <p className="mt-1 text-2xl font-bold text-emerald-600 tabular-nums">{integer.format(typeof orders === "number" ? orders : 0)}</p>
                 </div>
 
                 <div className="rounded-2xl bg-gray-50 p-4 text-center">
@@ -492,7 +501,7 @@ export default function OfficialApiCostCalculator() {
             </div>
 
             <p className="mt-6 text-center text-xs text-gray-500 font-medium">
-              {integer.format(orders)} orders × {derivedMessagesPerOrder} messages per order
+              {integer.format(typeof orders === "number" ? orders : 0)} orders × {derivedMessagesPerOrder} messages per order
             </p>
           </div>
 

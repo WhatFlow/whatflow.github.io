@@ -38,6 +38,7 @@ const plans: Plan[] = [
       { usage: "First 5,000 Messages Sent", cost: "Free" },
       { usage: "5,001+ Messages Sent", cost: "$0.004" },
     ],
+    featured: true,
   },
   {
     name: "Growth",
@@ -46,7 +47,6 @@ const plans: Plan[] = [
       { usage: "First 20,000 Messages Sent", cost: "Free" },
       { usage: "20,001+ Messages Sent", cost: "$0.0025" },
     ],
-    featured: true,
   },
   {
     name: "Scale",
@@ -133,7 +133,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         </ul>
 
         <a
-          href="https://apps.shopify.com/whatflow"
+          href="https://apps.shopify.com/whatflow-official-api"
           className={`mt-7 block rounded-xl px-4 py-3 text-center text-sm font-semibold transition ${
             plan.featured
               ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md hover:from-emerald-700 hover:to-teal-700"
