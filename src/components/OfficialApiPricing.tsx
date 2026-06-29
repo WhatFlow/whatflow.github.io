@@ -25,7 +25,7 @@ const plans: Plan[] = [
   {
     name: "Starter",
     price: "$9.99",
-    bestValue: "Best value for up to 4,900 messages per month.",
+    bestValue: "Best value for up to 10,000 messages per month.",
     usageTiers: [
       { usage: "First 5,000 Messages Sent", cost: "Free" },
       { usage: "5,001+ Messages Sent", cost: "$0.004" },
@@ -35,7 +35,7 @@ const plans: Plan[] = [
   {
     name: "Growth",
     price: "$29.99",
-    bestValue: "Best value for up to 19,900 messages per month.",
+    bestValue: "Best value for up to 48,000 messages per month.",
     usageTiers: [
       { usage: "First 20,000 Messages Sent", cost: "Free" },
       { usage: "20,001+ Messages Sent", cost: "$0.0025" },
@@ -44,7 +44,7 @@ const plans: Plan[] = [
   {
     name: "Scale",
     price: "$99.99",
-    bestValue: "Best value for up to 74,900 messages per month.",
+    // bestValue: "Best value for up to 74,900 messages per month.",
     usageTiers: [
       { usage: "First 75,000 Messages Sent", cost: "Free" },
       { usage: "75,001 to 200,000 Messages Sent", cost: "$0.0015" },
