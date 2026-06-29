@@ -7,7 +7,6 @@ type Plan = {
   name: string;
   price: string;
   usageTiers: UsageTier[];
-  bestValue: string;
   tierNote?: string;
   featured?: boolean;
 };
@@ -16,7 +15,6 @@ const plans: Plan[] = [
   {
     name: "Free to Install",
     price: "$0",
-    bestValue: "Best value for under 1,100 messages per month.",
     usageTiers: [
       { usage: "First 100 Messages Sent", cost: "Free" },
       { usage: "101+ Messages Sent", cost: "$0.01" },
@@ -25,7 +23,6 @@ const plans: Plan[] = [
   {
     name: "Starter",
     price: "$9.99",
-    bestValue: "Best value for up to 4,900 messages per month.",
     usageTiers: [
       { usage: "First 5,000 Messages Sent", cost: "Free" },
       { usage: "5,001+ Messages Sent", cost: "$0.004" },
@@ -35,7 +32,6 @@ const plans: Plan[] = [
   {
     name: "Growth",
     price: "$29.99",
-    bestValue: "Best value for up to 19,900 messages per month.",
     usageTiers: [
       { usage: "First 20,000 Messages Sent", cost: "Free" },
       { usage: "20,001+ Messages Sent", cost: "$0.0025" },
@@ -44,7 +40,6 @@ const plans: Plan[] = [
   {
     name: "Scale",
     price: "$99.99",
-    bestValue: "Best value for up to 74,900 messages per month.",
     usageTiers: [
       { usage: "First 75,000 Messages Sent", cost: "Free" },
       { usage: "75,001 to 200,000 Messages Sent", cost: "$0.0015" },
@@ -109,9 +104,6 @@ function PlanCard({ plan }: { plan: Plan }) {
       <div className="flex flex-1 flex-col p-6">
         <p className="text-sm leading-6 text-gray-700">
           All features are included in every plan; pricing varies only by usage.
-        </p>
-        <p className="mt-2 text-sm font-medium leading-6 text-emerald-700">
-          {plan.bestValue}
         </p>
 
         <a
